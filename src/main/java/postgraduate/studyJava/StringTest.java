@@ -13,9 +13,9 @@ public class StringTest {
         // replaceAll支持正则表达式，因此会对参数进行解析（两个参数均是），如replaceAll("\\d", "*")
         // 而replace则不会，replace("\\d","*")就是替换"\\d"的字符串，而不会解析为正则。如果不使用正则表达式反而用了replaceAll,效率更低。
         String ss = "We are happy 2021 !.";
-        System.out.println(ss.replace(" ", "%20"));// We%20are%20happy%202021%20!.
+        System.out.println(ss.replace(" ", "*"));// We%20are%20happy%202021%20!.
         // \\d 代表整数字符。
-        System.out.println(ss.replaceAll("\\d", "%20"));// We are happy %20%20%20%20 !.
+        System.out.println(ss.replaceAll("\\d", "*"));// We are happy %20%20%20%20 !.
     }
 
     @Test
@@ -152,10 +152,11 @@ public class StringTest {
          * 然后再一个字符一个字符的比较，出现不相等字符返回false。
          *
          * new String("ab")和 String a = "ab" 什么区别？
-         * String a=“ab”;该直接赋值本质是将一个开辟好的堆内存空间的使用权交给了对象a，也可以说对象a指向了保存有“ab”的堆内存空间。
+         * String a=“ab”;直接赋值的本质是将一个开辟好的堆内存空间的使用权交给了对象a，也可以说对象a指向了保存有“ab”的堆内存空间。
          * String a=new String(“ab”);该方法是重新开辟一个新的堆内存空间并将“ab”保存进去。
          * 两种方法的比较：
-         * 直接赋值不需要开辟新的内存，而是直接获得”ab“对象内存的使用权，且以后声明”ab“对象都不会开辟新的内存空间，而是直接引用；而通过new String（）方法赋值需要开辟新的内存空间。
+         * 直接赋值不需要开辟新的内存，而是直接获得”ab“对象内存的使用权，且以后声明”ab“对象都不会开辟新的内存空间，而是直接引用；
+         * 而通过new String（）方法赋值需要开辟新的内存空间。
          */
 
         String A = new String("美好一天");
@@ -168,4 +169,5 @@ public class StringTest {
         System.out.println(C.equals(D));
         System.out.println(C == D);
     }
+
 }

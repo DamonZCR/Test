@@ -1,10 +1,6 @@
 package postgraduate.studyJava;
 
 import org.junit.Test;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class study {
@@ -30,6 +26,7 @@ public class study {
 
     @Test
     public void test2(){
+        // 判断一个字符是不是数字，字母，数字或者字母。
         char c = '2';
         System.out.println("Character.isDigit(char c)判断是不是数字字符：" + Character.isDigit(c));
         System.out.println("Character.isLetter(char c)判断是不是字母：" + Character.isLetter(c));
@@ -89,5 +86,6 @@ public class study {
         // Integer.bitCount(int val) 返回整数的二进制形式中 1 的个数。
         // 具体使用见HammingDis.java 中的使用。
         System.out.println(Integer.bitCount(5));// val=4,res=1;val=5,res=2
+        int i = -1;
     }
 }
