@@ -13,9 +13,9 @@ public class StringTest {
         // replaceAll支持正则表达式，因此会对参数进行解析（两个参数均是），如replaceAll("\\d", "*")
         // 而replace则不会，replace("\\d","*")就是替换"\\d"的字符串，而不会解析为正则。如果不使用正则表达式反而用了replaceAll,效率更低。
         String ss = "We are happy 2021 !.";
-        System.out.println(ss.replace(" ", "*"));// We%20are%20happy%202021%20!.
+        System.out.println(ss.replace(" ", "*"));// We*are*happy*2021*!.
         // \\d 代表整数字符。
-        System.out.println(ss.replaceAll("\\d", "*"));// We are happy %20%20%20%20 !.
+        System.out.println(ss.replaceAll("\\d", "*"));// We are happy **** !.
     }
 
     @Test
@@ -112,7 +112,7 @@ public class StringTest {
         // BF（模式匹配）
         String s1 = "asdfaasfi";
         String s2 = "asf";
-        int s1Begin = 3;
+        int s1Begin = 0;
         int s2Begin = 0;
         while (s1Begin < s1.length() && s2Begin < s2.length()){
             if (s1.charAt(s1Begin) == s2.charAt(s2Begin)){

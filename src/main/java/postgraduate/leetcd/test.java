@@ -10,7 +10,7 @@ public class test {
     @Test
     public void testMath(){
         // 左移代表 乘以 2 的多少次方。
-        int n = 2;
+        int n = 3;
         System.out.println(n<<3);
         System.out.println(n*(Math.pow(2, 3)));
 

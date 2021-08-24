@@ -48,10 +48,10 @@ public class study {
     @Test
     public void StringCompareTO(){
         // compareTo() 函数。
-        String s = "b";
-        String ss = "a";
+        String s = "a";
+        String ss = "c";
         String sss = null;
-        // 主字符串等于它得 0，小于得 -1 ，大于得 1
+        // 主字符串等于它得 0，小于得 小于0的值 ，大于得 大于0的值
         System.out.println(s.compareTo(ss));
         // 不能和空null 进行比较
         //System.out.println(s.compareTo(sss));
@@ -65,7 +65,7 @@ public class study {
     @Test
     public void CalcuteTime(){
 
-        // 方法一：估计程序运行时间，以毫秒为单位；
+        // 方法一：估计程序运行时间，以毫秒为单位；1s = 1000ms
         long startTime=System.currentTimeMillis();
         /**
          * 程序代码段；
