@@ -169,5 +169,13 @@ public class StringTest {
         System.out.println(C.equals(D));
         System.out.println(C == D);
     }
+    @Test
+    public void StrBufferDel(){
+        StringBuffer s = new StringBuffer("abcdefghijk");
+        // StringBuffer中删除指定位置的某个字符
+        s.deleteCharAt(1);
+        System.out.println(s);
+    }
+
 
 }
