@@ -88,4 +88,16 @@ public class study {
         System.out.println(Integer.bitCount(5));// val=4,res=1;val=5,res=2
         int i = -1;
     }
+    @Test
+    public void testArray(){
+        // 测试Java中向函数传递数组为 引用传递，在go中是值传递。
+        // 使得被传进的函数会改变数组的内容,而golang不会改变。
+        int[] num = {1,2,3,4,5,6};
+        testFunc(num);
+        for(int i : num)
+            System.out.print(" " + i);//  10 2 3 4 5 6
+    }
+    private void testFunc(int[] num){
+        num[0] = 10;
+    }
 }
