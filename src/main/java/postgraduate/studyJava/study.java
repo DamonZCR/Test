@@ -61,6 +61,11 @@ public class study {
         // 判断此对象 是否 是这个类的对象；
         String s = "22";
         System.out.println(s instanceof String);// true
+
+        // 求log(2)(5)即log以2为底的5，根据换底公式可得log(5)/log(2)
+        double m = 5.0;
+        double n = 3.0;
+        double value = Math.log(m) / Math.log(n);
     }
     @Test
     public void CalcuteTime(){
