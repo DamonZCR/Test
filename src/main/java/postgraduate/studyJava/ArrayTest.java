@@ -106,6 +106,7 @@ public class ArrayTest {
     }
     @Test
     public void test7(){
+        // 仅使用字符串数组
         String[] nums = {"中","dddd","zlw"};
         List<String> list = Arrays.asList(nums);
         Iterator it = list.iterator();

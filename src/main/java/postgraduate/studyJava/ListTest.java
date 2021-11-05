@@ -93,4 +93,5 @@ public class ListTest {
         list.forEach(t -> System.out.println(t + " "));
         System.out.println(list.size());
     }
+
 }

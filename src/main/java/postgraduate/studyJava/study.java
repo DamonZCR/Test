@@ -22,6 +22,7 @@ public class study {
         // String比较是否相等使用 equal(),char可以使用 ==。
         String m = "T";
         System.out.println(m.equals("T"));
+        System.out.println(Integer.MAX_VALUE);
     }
 
     @Test
@@ -44,6 +45,8 @@ public class study {
         int[] c = new int[]{1, 2, 3,4};
         // 二维数组必须规定行数。
         int[][] d = new int[4][];
+        String s = null;
+        System.out.println(s.hashCode());
     }
     @Test
     public void StringCompareTO(){
