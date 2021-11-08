@@ -12,9 +12,7 @@ public class IOBufferFast {
             //计时的方法。在System类中，start为方法启动时的系统运行时间，end为方法结束时的系统运行时间
             long start = System.currentTimeMillis();
 
-
-                method("D:\\IDEA\\Test\\src\\usefile\\j.png","D:\\IDEA\\Test\\src\\usefile\\Copy3.png");
-
+            method("D:\\IDEA\\Test\\src\\usefile\\j.png","D:\\IDEA\\Test\\src\\usefile\\Copy3.png");
 
             long end = System.currentTimeMillis();
             System.out.println("共耗时：" + (end - start) + "毫秒");

@@ -17,7 +17,6 @@ public class  IOCopyTest {
         FileInputStream fin = new FileInputStream("D:\\IDEA\\Test\\src\\usefile\\Copy.txt");
         //自动生成复制好的文件
         FileOutputStream fout = new FileOutputStream("D:\\IDEA\\Test\\src\\usefile\\Copy2.txt");
-
         int sys = 0;
         while((sys = fin.read()) != -1){
             fout.write(sys);

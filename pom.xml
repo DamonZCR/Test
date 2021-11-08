@@ -43,6 +43,12 @@
       <artifactId>commons-codec</artifactId>
       <version>1.14</version>
     </dependency>
+    <dependency>
+      <!--这个包是用来IO操作的，实际开发中直接快速复制文件，对应QuickCopy.java-->
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.5</version>
+    </dependency>
   </dependencies>
 
 </project>

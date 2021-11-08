@@ -14,7 +14,7 @@ public class ConnDB {
     public void connection(){//连接数据库
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf8","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf8","root","root");
             stmt = conn.createStatement();
             System.out.println("连接成功！");
         }catch(ClassNotFoundException e1){

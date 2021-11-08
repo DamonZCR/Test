@@ -30,7 +30,6 @@ public class IOCopyImage {
         while((len = fin.read(b)) != -1){
         //写入数组b中，只从字节0到字节len
             fout.write(b,0,len);
-
         };
         //释放资源
         fin.close();
