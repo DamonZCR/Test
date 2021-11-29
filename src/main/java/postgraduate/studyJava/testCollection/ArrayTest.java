@@ -1,4 +1,4 @@
-package postgraduate.studyJava;
+package postgraduate.studyJava.testCollection;
 /*
 *测试使用Arrays的内部方法：
 * ① Arrays.sort() 排序从小到大排序。

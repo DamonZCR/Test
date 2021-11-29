@@ -1,4 +1,4 @@
-package postgraduate.studyJava;
+package postgraduate.studyJava.testCollection;
 
 import org.junit.Test;
 import java.util.*;

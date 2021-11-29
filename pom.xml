@@ -49,6 +49,18 @@
       <artifactId>commons-io</artifactId>
       <version>2.5</version>
     </dependency>
+    <dependency>
+      <!--json转换使用，对应testJSON中MyJson.java-->
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.62</version>
+    </dependency>
+    <!--导入使用redis的jedis包,在testRedis包中测试使用Redis包-->
+    <dependency> <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
   </dependencies>
 
 </project>

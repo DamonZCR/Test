@@ -1,5 +1,6 @@
 package postgraduate.studyJava.multiThread.style4CreateThread;
 
+import java.util.Hashtable;
 import java.util.concurrent.*;
 
 /**
@@ -35,9 +36,9 @@ public class ThreadPool {
         //1. 提供指定线程数量的线程池
         ExecutorService ex = Executors.newFixedThreadPool(10);
         ThreadPoolExecutor service1 = (ThreadPoolExecutor) ex;
-        //设置线程池的属性,只有需要设置线程池属性采用上面这行。
-//        service1.setCorePoolSize(15);
-//        service1.setKeepAliveTime();
+        //设置线程池的属性,只有需要设置线程池属性才用上面这行。
+        /*service1.setCorePoolSize(15);
+        service1.setKeepAliveTime();*/
 
         //2.执行指定的线程的操作。需要提供实现Runnable接口或Callable接口实现类的对象
         ex.execute(new AThread());//适合适用于Runnable
@@ -51,7 +52,6 @@ public class ThreadPool {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
         //3.关闭连接池
         ex.shutdown();
     }

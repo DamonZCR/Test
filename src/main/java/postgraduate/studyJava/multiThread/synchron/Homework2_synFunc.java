@@ -13,7 +13,7 @@ class SellTicket2_synFunc implements Runnable{
             Sell();
         }
     }
-    // 不需要将同步方法设置为静态，应为多个线程同为一个类创建。
+    // 不需要将同步方法设置为静态，因为多个线程同为一个类创建。
     private synchronized void Sell(){
         if (num > 0) {
             System.out.println(Thread.currentThread().getName() +

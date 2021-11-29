@@ -95,6 +95,12 @@ public class study {
         // 具体使用见HammingDis.java 中的使用。
         System.out.println(Integer.bitCount(5));// val=4,res=1;val=5,res=2
         int i = -1;
+
+
+        int h;
+        int f = 1;
+        int j = (f == 0) ? 1 : (h = 3);
+        System.out.println(j);
     }
     @Test
     public void testArray(){
@@ -106,6 +112,7 @@ public class study {
             System.out.print(" " + i);//  10 2 3 4 5 6
     }
     private void testFunc(int[] num){
+        // 传进的数组，首位可以直接赋值。
         num[0] = 10;
     }
 }

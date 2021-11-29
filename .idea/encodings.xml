@@ -2,9 +2,12 @@
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/AllSetSon.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/BestMinSort.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/lanqiao/Java11D.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/play/学生管理系统.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/StackTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/multiThread/style4CreateThread/线程池的继承树.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/sort/BucketSort.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/BMItest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/BubbleSort.java" charset="UTF-8" />
@@ -12,9 +15,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/DoChinese.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/PrintDouble.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/Triangle.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/university/io/CopyMusic.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/io/GetTextPrint.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/university/io/IOBufferFast.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/jFrame/Time.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/net/IPHostName.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/net/TCPFileServer.java" charset="UTF-8" />
@@ -29,8 +30,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/university/net/UseThread.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/timer/MicroWaveMain.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/timer/MicroWaveWindow.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/usefile/Copy.txt" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/usefile/mnCopy.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/usefile/Copy.txt" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

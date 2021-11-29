@@ -1,0 +1,3 @@
+在实际开发中，并不是自己去写这么麻烦的读写操作，
+而是使用封装好的IO流包，如apache提供的第三方包commons.io下的FileUtils类
+QuickCopy.java中进行测试。
