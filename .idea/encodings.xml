@@ -15,7 +15,11 @@
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/DoChinese.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/PrintDouble.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/Triangle.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/university/io/GetTextPrint.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/university/io/CopyMusic.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/university/io/FileWordAdd.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/university/io/GetTextPrint.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/university/io/IOBufferFast.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/university/io/ReadLine.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/jFrame/Time.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/net/IPHostName.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/net/TCPFileServer.java" charset="UTF-8" />
