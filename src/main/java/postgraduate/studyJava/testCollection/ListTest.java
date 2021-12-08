@@ -93,5 +93,17 @@ public class ListTest {
         list.forEach(t -> System.out.println(t + " "));
         System.out.println(list.size());
     }
+    @Test
+    public void test5(){
+        // disjoint(Collection c1, Collection c2)如果两个指定的集合没有共同的元素，则返回true 。
+        List arrList = new ArrayList();
+        arrList.add(0, "9");
+        arrList.add(0, "2");
+        arrList.add(0, "3");
+        arrList.add(0, "4");
+
+
+        arrList.forEach(s-> System.out.print(s + " "));//4 3 2 9
+    }
 
 }
