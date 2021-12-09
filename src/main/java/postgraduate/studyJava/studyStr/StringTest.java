@@ -210,4 +210,12 @@ public class StringTest {
         String c = a.intern();
         System.out.println(c == a);
     }
+    @Test
+    public void AChinese(){
+        /**
+         * Java中一个char类型是两个字节，刚好可以存储一个汉字。
+         */
+        char c = '重';
+        System.out.println(c);
+    }
 }

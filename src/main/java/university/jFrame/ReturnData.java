@@ -26,40 +26,40 @@ public class ReturnData {
 	Statement stmt;
 	Connection conn;
 	
-	public void connection(){//Á¬½ÓÊı¾İ¿â
+	public void connection(){//è¿æ¥æ•°æ®åº“
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf8","root","root");
 			stmt = conn.createStatement();
 			
 		}catch(ClassNotFoundException e1){
-			System.out.println("Çı¶¯×°ÔØÊ§°Ü£¡");
+			System.out.println("é©±åŠ¨è£…è½½å¤±è´¥ï¼");
 		}catch(SQLException e2){
 			e2.getSQLState();
 			e2.getMessage();
 		}
 	}
-	public void close(){//¶Ï¿ªÊı¾İ¿â
+	public void close(){//æ–­å¼€æ•°æ®åº“
 		try{
 			if(stmt!=null)
 				stmt.close();
 			conn.close();
 		}catch(SQLException e2){
-			System.out.println("²»ÄÜÕı³£¹Ø±Õ");
+			System.out.println("ä¸èƒ½æ­£å¸¸å…³é—­");
 		}
 	}
-			//ÉÌÆ·Ò³Ãæ
+			//å•†å“é¡µé¢
 	public Component FindGoods(String name){
 		m1 = new JPanel(new BorderLayout());
 		try{
 			connection();
-			String sql = "SELECT * From ÉÌÆ·×Ü±í where ÉÌÆ· = '"+name+"'";
+			String sql = "SELECT * From å•†å“æ€»è¡¨ where å•†å“ = '"+name+"'";
 			ResultSet rs = stmt.executeQuery(sql);
 			rs.last();
 			rs.beforeFirst();
 			Object r1[][];
 			r1 = new Object[1][10];
-			Object s1[] = {"±àºÅ","ÉÌÆ·","³§ÉÌ","Àà±ğ","½ø¼Û","ÊıÁ¿","ÊÛ¼Û","½ø»õÊ±¼ä","×Ü½ø¼Û"};
+			Object s1[] = {"ç¼–å·","å•†å“","å‚å•†","ç±»åˆ«","è¿›ä»·","æ•°é‡","å”®ä»·","è¿›è´§æ—¶é—´","æ€»è¿›ä»·"};
 			JTable tb1 = new JTable(r1,s1);
 			if(rs.next()){
 				r1[0][0] = rs.getString(1);
@@ -73,7 +73,7 @@ public class ReturnData {
 				r1[0][8] = rs.getString(9);
 			}
 			else{
-				JOptionPane.showMessageDialog(null,"¸ÃÉÌÆ·²»´æÔÚ");
+				JOptionPane.showMessageDialog(null,"è¯¥å•†å“ä¸å­˜åœ¨");
 			}
 			JScrollPane spane1 = new JScrollPane(tb1);
 			m1.add(spane1);
@@ -84,11 +84,11 @@ public class ReturnData {
 		return m1;
 	}
 	public void AddGoods(String goods,String num1){
-		try {//ĞÂ½øÉÌÆ·ÊıÁ¿
+		try {//æ–°è¿›å•†å“æ•°é‡
 			int num = Integer.valueOf(num1), num2, num3;
 			String str1 = null;
 			connection();
-			String sql = "SELECT * From ÉÌÆ·×Ü±í  where ÉÌÆ·='" + goods + "'";
+			String sql = "SELECT * From å•†å“æ€»è¡¨  where å•†å“='" + goods + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				str1 = rs.getString(6);
@@ -96,11 +96,11 @@ public class ReturnData {
 			num2 = Integer.valueOf(str1);
 			num3 = num + num2;
 			str1 = Integer.toString(num3);
-			String updateSQL = "update ÉÌÆ·×Ü±í  set ÊıÁ¿=?" + "where ÉÌÆ·='" + goods + "' ";
+			String updateSQL = "update å•†å“æ€»è¡¨  set æ•°é‡=?" + "where å•†å“='" + goods + "' ";
 			PreparedStatement stmt;
 			stmt = conn.prepareStatement(updateSQL);
 			stmt.setString(1, str1);
-			JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦£¡");
+			JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸï¼");
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -113,19 +113,19 @@ public class ReturnData {
 		    int num1;
 			double num4,num2;
 		    Time t=new Time();
-			String str8=t.TimeTest2();//Ê±¼ä
+			String str8=t.TimeTest2();//æ—¶é—´
 			num4 = Double.valueOf(str5);
 			num1=Integer.valueOf(str6);
 			num2=num1*num4;
-			s=Double.toString(num2);//×Ü¼Û
+			s=Double.toString(num2);//æ€»ä»·
 			
 	  		try{
 				connection();
 				String InsSQL;
-				InsSQL = "INSERT INTO ÉÌÆ·×Ü±í  (±àºÅ,ÉÌÆ·,³§ÉÌ,Àà±ğ,½ø¼Û,ÊıÁ¿,ÊÛ¼Û,½ø»õÊ±¼ä,×Ü½ø¼Û) "+" VALUES ("+"'"+str1+"',"+"'"+str2+"',"
+				InsSQL = "INSERT INTO å•†å“æ€»è¡¨  (ç¼–å·,å•†å“,å‚å•†,ç±»åˆ«,è¿›ä»·,æ•°é‡,å”®ä»·,è¿›è´§æ—¶é—´,æ€»è¿›ä»·) "+" VALUES ("+"'"+str1+"',"+"'"+str2+"',"
 						+ ""+"'"+str3+"',"+"'"+str4+"',"+"'"+str5+"',"+"'"+str6+"',"+"'"+str7+"',"+"'"+str8+"',"+"'"+s+"')";
-				stmt.execute(InsSQL);// Ö´ĞĞ½«ĞÂ¼ÇÂ¼²åÈëµ½Êı¾İ±ístudentÖĞ£»
-				JOptionPane.showMessageDialog(null, "Ìí¼ÓÉÌÆ·³É¹¦");
+				stmt.execute(InsSQL);// æ‰§è¡Œå°†æ–°è®°å½•æ’å…¥åˆ°æ•°æ®è¡¨studentä¸­ï¼›
+				JOptionPane.showMessageDialog(null, "æ·»åŠ å•†å“æˆåŠŸ");
 			} 
 	  		 catch (SQLException e1) {
 				e1.getMessage();
@@ -136,12 +136,12 @@ public class ReturnData {
 				close();
 	  		}
 	}
-			//VIPÒ³Ãæ
+			//VIPé¡µé¢
 	Component SeeVIP(){
 		JPanel panel1 = new JPanel(new BorderLayout());
 		try {
 			connection();
-			String sql="select * from vipĞÅÏ¢±í";
+			String sql="select * from vipä¿¡æ¯è¡¨";
 			Statement stmt=conn.createStatement();
 			ResultSet rs=stmt.executeQuery(sql);
 			rs.last();
@@ -149,7 +149,7 @@ public class ReturnData {
 			rs.beforeFirst();
 			Object r1[][];
 			r1=new Object[k][100];
-			Object s1[] = { "ÕËºÅ","ÃÜÂë", "ĞÕÃû", "ĞÔ±ğ", "×¡Ö·", "µç»°",  "×¢²áÊ±¼ä","ÕÛ¿Û"};
+			Object s1[] = { "è´¦å·","å¯†ç ", "å§“å", "æ€§åˆ«", "ä½å€", "ç”µè¯",  "æ³¨å†Œæ—¶é—´","æŠ˜æ‰£"};
 			JTable tb1 = new JTable(r1, s1);
 			for (int i = 0; i < k && rs.next(); i++) {
 				r1[i][0] = rs.getString(1);
@@ -176,7 +176,7 @@ public class ReturnData {
 		JPanel panel1 = new JPanel(new BorderLayout());
 		try {
 			connection();
-			String sql="select * from vip¹ºÎï¼ÇÂ¼±í";
+			String sql="select * from vipè´­ç‰©è®°å½•è¡¨";
 			Statement stmt=conn.createStatement();
 			ResultSet rs=stmt.executeQuery(sql);
 			rs.last();
@@ -184,7 +184,7 @@ public class ReturnData {
 			rs.beforeFirst();
 			Object r1[][];
 			r1=new Object[k][20];
-			Object s1[] = { "ÈÕÆÚ","ÕËºÅ", "ĞÕÃû", "ÉÌÆ·", "³§ÉÌ", "µ¥¼Û", "ÕÛ¿Û", "Êµ¼Û", "×ÜÁ¿", "½ÚÊ¡"};
+			Object s1[] = { "æ—¥æœŸ","è´¦å·", "å§“å", "å•†å“", "å‚å•†", "å•ä»·", "æŠ˜æ‰£", "å®ä»·", "æ€»é‡", "èŠ‚çœ"};
 			JTable tb1 = new JTable(r1, s1);
 			if(k!=0){
 			for (int i = 0; i < k && rs.next(); i++) {
@@ -206,7 +206,7 @@ public class ReturnData {
 			conn.close();
 			}
 			else{
-				JOptionPane.showMessageDialog(null,"¹ºÎï¼ÇÂ¼Îª¿Õ");
+				JOptionPane.showMessageDialog(null,"è´­ç‰©è®°å½•ä¸ºç©º");
 			}
 		} catch (SQLException e) {
 			e.getMessage();
@@ -220,9 +220,9 @@ public class ReturnData {
 		try{
 			connection();
 			String InsSQL;
-			InsSQL = "INSERT INTO vipĞÅÏ¢±í   (ÕÊºÅ,ÃÜÂë,ĞÕÃû,ĞÔ±ğ,×¡Ö·,µç»°,ÕÛ¿Û,×¢²áÊ±¼ä) "+" VALUES ("+"'"+str1+"',"+"'"+str2+"',"+"'"+str3+"',"+"'"+str4+"',"+"'"+str5+"',"+"'"+str6+"',"+"'"+str7+"',"+"'"+str8+"')";
-			stmt.execute(InsSQL);// Ö´ĞĞ½«ĞÂ¼ÇÂ¼²åÈëµ½Êı¾İ±ístudentÖĞ£»
-			JOptionPane.showMessageDialog(null, "×¢²á³É¹¦,¿É½øÈëä¯ÀÀVIPÒ³Ãæ²é¿´£¡");
+			InsSQL = "INSERT INTO vipä¿¡æ¯è¡¨   (å¸å·,å¯†ç ,å§“å,æ€§åˆ«,ä½å€,ç”µè¯,æŠ˜æ‰£,æ³¨å†Œæ—¶é—´) "+" VALUES ("+"'"+str1+"',"+"'"+str2+"',"+"'"+str3+"',"+"'"+str4+"',"+"'"+str5+"',"+"'"+str6+"',"+"'"+str7+"',"+"'"+str8+"')";
+			stmt.execute(InsSQL);// æ‰§è¡Œå°†æ–°è®°å½•æ’å…¥åˆ°æ•°æ®è¡¨studentä¸­ï¼›
+			JOptionPane.showMessageDialog(null, "æ³¨å†ŒæˆåŠŸ,å¯è¿›å…¥æµè§ˆVIPé¡µé¢æŸ¥çœ‹ï¼");
 			stmt.close();
 			conn.close();
 		} catch (SQLException e1) {
@@ -237,7 +237,7 @@ public class ReturnData {
 		r1=new Object[1][10];
 		try {
 			connection();
-			String sql="SELECT * From vipĞÅÏ¢±í   where ÕÊºÅ='"+num2+"'";
+			String sql="SELECT * From vipä¿¡æ¯è¡¨   where å¸å·='"+num2+"'";
 			ResultSet rs=stmt.executeQuery(sql);
 			if(rs.next()){
 				r=1;
@@ -254,11 +254,11 @@ public class ReturnData {
 			conn.close();
 		
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 		finally {if(r==1){
-			Object s1[] = { "ÕËºÅ","ÃÜÂë", "ĞÕÃû", "ĞÔ±ğ", "×¡Ö·", "µç»°",  "×¢²áÊ±¼ä","ÕÛ¿Û"};
+			Object s1[] = { "è´¦å·","å¯†ç ", "å§“å", "æ€§åˆ«", "ä½å€", "ç”µè¯",  "æ³¨å†Œæ—¶é—´","æŠ˜æ‰£"};
 			JTable tb1 = new JTable(r1, s1);
 			JScrollPane spane1 = new JScrollPane(tb1);
 			JPanel spa = new JPanel(new BorderLayout());
@@ -266,7 +266,7 @@ public class ReturnData {
 			return spa;
 		}else{
 			JPanel spb = new JPanel();
-			JLabel txt = new JLabel("Äú²éÑ¯µÄÓÃ»§²»´æÔÚ£¡");
+			JLabel txt = new JLabel("æ‚¨æŸ¥è¯¢çš„ç”¨æˆ·ä¸å­˜åœ¨ï¼");
 			spb.add(txt);
 			return spb;
 		}
@@ -277,7 +277,7 @@ public class ReturnData {
 		JPanel c4 = new JPanel();
 		 c4.setLayout(new BorderLayout());
 		 JPanel zhu1 = new JPanel();
-		 zhu1.add(new JLabel("ĞŞ¸ÄVIP"));
+		 zhu1.add(new JLabel("ä¿®æ”¹VIP"));
 		 JPanel zhu2 = new JPanel();
 		 JPanel zhu3 = new JPanel(new GridLayout(6,2,3,3));
 		 final JTextField t1 = new JTextField();
@@ -286,22 +286,22 @@ public class ReturnData {
 		final JTextField t4 = new JTextField();
 		 final JTextField t5 = new JTextField();
 		final JTextField t6 = new JTextField();
-		 zhu3.add(new JLabel("ĞŞ¸ÄÃÜÂë"));zhu3.add(t1);
-		 zhu3.add(new JLabel("ĞŞ¸ÄĞÕÃû"));zhu3.add(t2);
-		 zhu3.add(new JLabel("ĞŞ¸ÄĞÔ±ğ"));zhu3.add(t3);
-		 zhu3.add(new JLabel("ĞŞ¸Ä×¡Ö·"));zhu3.add(t4);
-		 zhu3.add(new JLabel("ĞŞ¸Äµç»°"));zhu3.add(t5);
-		 zhu3.add(new JLabel("ĞŞ¸ÄÕÛ¿Û"));zhu3.add(t6);
+		 zhu3.add(new JLabel("ä¿®æ”¹å¯†ç "));zhu3.add(t1);
+		 zhu3.add(new JLabel("ä¿®æ”¹å§“å"));zhu3.add(t2);
+		 zhu3.add(new JLabel("ä¿®æ”¹æ€§åˆ«"));zhu3.add(t3);
+		 zhu3.add(new JLabel("ä¿®æ”¹ä½å€"));zhu3.add(t4);
+		 zhu3.add(new JLabel("ä¿®æ”¹ç”µè¯"));zhu3.add(t5);
+		 zhu3.add(new JLabel("ä¿®æ”¹æŠ˜æ‰£"));zhu3.add(t6);
 		 zhu2.add(zhu3);
 		 c4.add(zhu1,BorderLayout.NORTH);
-		 c4.add(zhu2);JButton Fin = new JButton("Íê³É");
+		 c4.add(zhu2);JButton Fin = new JButton("å®Œæˆ");
 		 c4.add(Fin,BorderLayout.SOUTH);
 		 Fin.addActionListener(new ActionListener(){
 			 public void actionPerformed(ActionEvent e){
 		try {
 			
 			connection();
-			String updateSQL="update vipĞÅÏ¢±í  set ÃÜÂë=?,"+"ĞÕÃû=?," +"ĞÔ±ğ=?," +"×¡Ö·=?," +"µç»°=?," +"ÕÛ¿Û=?"+"where ÕÊºÅ='"+num3+"' ";
+			String updateSQL="update vipä¿¡æ¯è¡¨  set å¯†ç =?,"+"å§“å=?," +"æ€§åˆ«=?," +"ä½å€=?," +"ç”µè¯=?," +"æŠ˜æ‰£=?"+"where å¸å·='"+num3+"' ";
 			PreparedStatement stmt;
 			stmt=conn.prepareStatement(updateSQL);
 			stmt.setString(1, t1.getText());
@@ -311,12 +311,12 @@ public class ReturnData {
 			stmt.setString(5, t5.getText());
 			stmt.setString(6, t6.getText());
 			stmt.execute();
-			JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦");
+			JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸ");
   			stmt.close();
   			stmt.close();
   			conn.close();
 		} catch (SQLException i) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			i.printStackTrace();
 		}
 			 }}
@@ -325,23 +325,23 @@ public class ReturnData {
 	}
 
 	public void DelVIP(String num4){
-		String delStr="delete from vipĞÅÏ¢±í  where ÕÊºÅ='"+num4+"'";
+		String delStr="delete from vipä¿¡æ¯è¡¨  where å¸å·='"+num4+"'";
 		try{
  			connection();
  			stmt.execute(delStr);
- 			JOptionPane.showMessageDialog(null,"É¾³ı³É¹¦!");
+ 			JOptionPane.showMessageDialog(null,"åˆ é™¤æˆåŠŸ!");
 		}catch(SQLException e1){
-  			System.err.println("É¾³ıÊ§°Ü£¡");
+  			System.err.println("åˆ é™¤å¤±è´¥ï¼");
   			System.err.println(e1.getSQLState()+e1.getMessage());
 		}
 	}
 
-			//ÈËÊÂ¹ÜÀíÒ³Ãæ
+			//äººäº‹ç®¡ç†é¡µé¢
 	public Component SeeWorker(){
 		JPanel panel1 = new JPanel(new BorderLayout());
 		try {
 			connection();
-			String sql="select * from ÈËÊÂĞÅÏ¢×Ü±í";
+			String sql="select * from äººäº‹ä¿¡æ¯æ€»è¡¨";
 			Statement stmt=conn.createStatement();
 			ResultSet rs=stmt.executeQuery(sql);
 			rs.last();
@@ -349,7 +349,7 @@ public class ReturnData {
 			rs.beforeFirst();
 			Object r1[][];
 			r1=new Object[k][20];
-			Object s1[] = { "¹¤ºÅ","ĞÕÃû", "ĞÔ±ğ", "ÄêÁä", "²¿ÃÅ", "Ö°Îñ", "µç»°", "ÔÂĞ½", "×¡Ö·", "×´Ì¬", "×¢²áÊ±¼ä"};
+			Object s1[] = { "å·¥å·","å§“å", "æ€§åˆ«", "å¹´é¾„", "éƒ¨é—¨", "èŒåŠ¡", "ç”µè¯", "æœˆè–ª", "ä½å€", "çŠ¶æ€", "æ³¨å†Œæ—¶é—´"};
 			JTable tb1 = new JTable(r1, s1);
 			for (int i = 0; i < k && rs.next(); i++) {
 				r1[i][0] = rs.getString(1);
@@ -371,7 +371,7 @@ public class ReturnData {
 			conn.close();
 			
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.getMessage();
 			e.printStackTrace();
 		}
@@ -384,7 +384,7 @@ public class ReturnData {
 		r1=new Object[1][12];
 		try {
 			connection();
-			String sql="SELECT * From ÈËÊÂĞÅÏ¢×Ü±í   where ¹¤ºÅ='"+num5+"'";
+			String sql="SELECT * From äººäº‹ä¿¡æ¯æ€»è¡¨   where å·¥å·='"+num5+"'";
 			ResultSet rs=stmt.executeQuery(sql);
 			if(rs.next()){
 				r=1;
@@ -404,11 +404,11 @@ public class ReturnData {
 			conn.close();
 		
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 		finally {if(r==1){
-			Object s1[] = { "¹¤ºÅ", "ĞÕÃû", "ĞÔ±ğ", "ÄêÁä","²¿ÃÅ","Ö°Îñ","µç»°","ÔÂĞ½","×¡Ö·","×´Ì¬","×¢²áÊ±¼ä"};
+			Object s1[] = { "å·¥å·", "å§“å", "æ€§åˆ«", "å¹´é¾„","éƒ¨é—¨","èŒåŠ¡","ç”µè¯","æœˆè–ª","ä½å€","çŠ¶æ€","æ³¨å†Œæ—¶é—´"};
 			JTable tb1 = new JTable(r1, s1);
 			JScrollPane spane1 = new JScrollPane(tb1);
 			JPanel spa = new JPanel(new BorderLayout());
@@ -416,7 +416,7 @@ public class ReturnData {
 			return spa;
 		}else{
 			JPanel spb = new JPanel();
-			JLabel txt = new JLabel("Äú²éÑ¯µÄÔ±¹¤²»´æÔÚ£¡");
+			JLabel txt = new JLabel("æ‚¨æŸ¥è¯¢çš„å‘˜å·¥ä¸å­˜åœ¨ï¼");
 			spb.add(txt);
 			return spb;
 		}
@@ -428,9 +428,9 @@ public class ReturnData {
 		try{
 			connection();
 			String InsSQL;
-			InsSQL = "INSERT INTO ÈËÊÂĞÅÏ¢×Ü±í   (¹¤ºÅ,ĞÕÃû,µç»°,ĞÔ±ğ,ÄêÁä,²¿ÃÅ,Ö°Îñ,ÔÂĞ½,×´Ì¬,×¡Ö·,×¢²áÊ±¼ä) "+" VALUES ("+"'"+str1+"',"+"'"+str2+"',"+"'"+str3+"',"+"'"+str4+"',"+"'"+str5+"',"+"'"+str6+"',"+"'"+str7+"',"+"'"+str8+"',"+"'"+str9+"',"+"'"+str10+"',"+"'"+str11+"')";
-			stmt.execute(InsSQL);// Ö´ĞĞ½«ĞÂ¼ÇÂ¼²åÈëµ½Êı¾İ±ístudentÖĞ£»
-			JOptionPane.showMessageDialog(null, "×¢²á³É¹¦,¿É½øÈëä¯ÀÀÔ±¹¤Ò³Ãæ²é¿´£¡");
+			InsSQL = "INSERT INTO äººäº‹ä¿¡æ¯æ€»è¡¨   (å·¥å·,å§“å,ç”µè¯,æ€§åˆ«,å¹´é¾„,éƒ¨é—¨,èŒåŠ¡,æœˆè–ª,çŠ¶æ€,ä½å€,æ³¨å†Œæ—¶é—´) "+" VALUES ("+"'"+str1+"',"+"'"+str2+"',"+"'"+str3+"',"+"'"+str4+"',"+"'"+str5+"',"+"'"+str6+"',"+"'"+str7+"',"+"'"+str8+"',"+"'"+str9+"',"+"'"+str10+"',"+"'"+str11+"')";
+			stmt.execute(InsSQL);// æ‰§è¡Œå°†æ–°è®°å½•æ’å…¥åˆ°æ•°æ®è¡¨studentä¸­ï¼›
+			JOptionPane.showMessageDialog(null, "æ³¨å†ŒæˆåŠŸ,å¯è¿›å…¥æµè§ˆå‘˜å·¥é¡µé¢æŸ¥çœ‹ï¼");
 			stmt.close();
 			conn.close();
 		} catch (SQLException e1) {
@@ -444,7 +444,7 @@ public class ReturnData {
 		JPanel c4 = new JPanel();
 		 c4.setLayout(new BorderLayout());
 		 JPanel zhu1 = new JPanel();
-		 zhu1.add(new JLabel("ĞŞ¸ÄÔ±¹¤"));
+		 zhu1.add(new JLabel("ä¿®æ”¹å‘˜å·¥"));
 		 JPanel zhu2 = new JPanel();
 		 JPanel zhu3 = new JPanel(new GridLayout(9,2,3,3));
 		 final JTextField t1 = new JTextField();
@@ -456,24 +456,24 @@ public class ReturnData {
 		final JTextField t7 = new JTextField();
 		 final JTextField t8 = new JTextField();
 		final JTextField t9 = new JTextField();
-		 zhu3.add(new JLabel("ĞŞ¸ÄĞÕÃû"));zhu3.add(t1);
-		 zhu3.add(new JLabel("ĞŞ¸ÄĞÔ±ğ"));zhu3.add(t2);
-		 zhu3.add(new JLabel("ĞŞ¸ÄÄêÁä"));zhu3.add(t3);
-		 zhu3.add(new JLabel("ĞŞ¸Ä²¿ÃÅ"));zhu3.add(t4);
-		 zhu3.add(new JLabel("ĞŞ¸ÄÖ°Îñ"));zhu3.add(t5);
-		 zhu3.add(new JLabel("ĞŞ¸Äµç»°"));zhu3.add(t6);
-		 zhu3.add(new JLabel("ĞŞ¸ÄÔÂĞ½"));zhu3.add(t7);
-		 zhu3.add(new JLabel("ĞŞ¸Ä×¡Ö·"));zhu3.add(t8);
-		 zhu3.add(new JLabel("ĞŞ¸Ä×´Ì¬"));zhu3.add(t9);
+		 zhu3.add(new JLabel("ä¿®æ”¹å§“å"));zhu3.add(t1);
+		 zhu3.add(new JLabel("ä¿®æ”¹æ€§åˆ«"));zhu3.add(t2);
+		 zhu3.add(new JLabel("ä¿®æ”¹å¹´é¾„"));zhu3.add(t3);
+		 zhu3.add(new JLabel("ä¿®æ”¹éƒ¨é—¨"));zhu3.add(t4);
+		 zhu3.add(new JLabel("ä¿®æ”¹èŒåŠ¡"));zhu3.add(t5);
+		 zhu3.add(new JLabel("ä¿®æ”¹ç”µè¯"));zhu3.add(t6);
+		 zhu3.add(new JLabel("ä¿®æ”¹æœˆè–ª"));zhu3.add(t7);
+		 zhu3.add(new JLabel("ä¿®æ”¹ä½å€"));zhu3.add(t8);
+		 zhu3.add(new JLabel("ä¿®æ”¹çŠ¶æ€"));zhu3.add(t9);
 		 zhu2.add(zhu3);
 		 c4.add(zhu1,BorderLayout.NORTH);
-		 c4.add(zhu2);JButton Fin = new JButton("Íê³É");
+		 c4.add(zhu2);JButton Fin = new JButton("å®Œæˆ");
 		 c4.add(Fin,BorderLayout.SOUTH);
 		 Fin.addActionListener(new ActionListener(){
 			 public void actionPerformed(ActionEvent e){
 		try {
 			connection();
-			String updateSQL="update ÈËÊÂĞÅÏ¢×Ü±í  set ĞÕÃû=?,"+"ĞÔ±ğ=?,"+"ÄêÁä=?,"+"²¿ÃÅ=?,"+"Ö°Îñ=?,"+"µç»°=?,"+"ÔÂĞ½=?,"+"×¡Ö·=?,"+"×´Ì¬=?"+"where ¹¤ºÅ='"+num6+"'";
+			String updateSQL="update äººäº‹ä¿¡æ¯æ€»è¡¨  set å§“å=?,"+"æ€§åˆ«=?,"+"å¹´é¾„=?,"+"éƒ¨é—¨=?,"+"èŒåŠ¡=?,"+"ç”µè¯=?,"+"æœˆè–ª=?,"+"ä½å€=?,"+"çŠ¶æ€=?"+"where å·¥å·='"+num6+"'";
 			PreparedStatement stmt;
 			stmt=conn.prepareStatement(updateSQL);
 			stmt.setString(1, t1.getText());
@@ -486,12 +486,12 @@ public class ReturnData {
 			stmt.setString(8, t8.getText());
 			stmt.setString(9, t9.getText());
 			stmt.execute();
-			JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦£¡¿É·µ»Øä¯ÀÀÒ³Ãæ²é¿´~");
+			JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸï¼å¯è¿”å›æµè§ˆé¡µé¢æŸ¥çœ‹~");
  			stmt.close();
  			stmt.close();
  			conn.close();
 		} catch (SQLException i) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			i.printStackTrace();
 		}
 			 }}
@@ -504,7 +504,7 @@ public class ReturnData {
 		r1=new Object[1][11];
 		try {
 			connection();
-			String sql="SELECT * From ÈËÊÂĞÅÏ¢×Ü±í   where ¹¤ºÅ='"+num2+"'";
+			String sql="SELECT * From äººäº‹ä¿¡æ¯æ€»è¡¨   where å·¥å·='"+num2+"'";
 			ResultSet rs=stmt.executeQuery(sql);
 			if(rs.next()){
 				r=1;
@@ -524,11 +524,11 @@ public class ReturnData {
 			conn.close();
 		
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 		finally {if(r==1){
-			Object s1[] = {"¹¤ºÅ","ĞÕÃû", "ĞÔ±ğ","ÄêÁä","²¿ÃÅ","Ö°Îñ", "µç»°",  "ÔÂĞ½", "×¡Ö·", "×´Ì¬", "×¢²áÊ±¼ä"};
+			Object s1[] = {"å·¥å·","å§“å", "æ€§åˆ«","å¹´é¾„","éƒ¨é—¨","èŒåŠ¡", "ç”µè¯",  "æœˆè–ª", "ä½å€", "çŠ¶æ€", "æ³¨å†Œæ—¶é—´"};
 			JTable tb1 = new JTable(r1, s1);
 			JScrollPane spane1 = new JScrollPane(tb1);
 			JPanel spa = new JPanel(new BorderLayout());
@@ -536,20 +536,20 @@ public class ReturnData {
 			return spa;
 		}else{
 			JPanel spb = new JPanel();
-			JLabel txt = new JLabel("Äú²éÑ¯µÄÔ±¹¤²»´æÔÚ£¡");
+			JLabel txt = new JLabel("æ‚¨æŸ¥è¯¢çš„å‘˜å·¥ä¸å­˜åœ¨ï¼");
 			spb.add(txt);
 			return spb;
 		}
 		}
 	}
 	public void DelWorker(String num4){
-		String delStr="delete from ÈËÊÂĞÅÏ¢×Ü±í  where ¹¤ºÅ='"+num4+"'";
+		String delStr="delete from äººäº‹ä¿¡æ¯æ€»è¡¨  where å·¥å·='"+num4+"'";
 		try{
  			connection();
  			stmt.execute(delStr);
- 			JOptionPane.showMessageDialog(null,"É¾³ı³É¹¦!");
+ 			JOptionPane.showMessageDialog(null,"åˆ é™¤æˆåŠŸ!");
 		}catch(SQLException e1){
-  			System.err.println("É¾³ıÊ§°Ü£¡");
+  			System.err.println("åˆ é™¤å¤±è´¥ï¼");
   			System.err.println(e1.getSQLState()+e1.getMessage());
 		}
 	}
@@ -558,7 +558,7 @@ public class ReturnData {
 	JPanel panel1 = new JPanel(new BorderLayout());
 	try {
 		connection();
-		String sql="select * from ÀûÈó±í";
+		String sql="select * from åˆ©æ¶¦è¡¨";
 		Statement stmt=conn.createStatement();
 		ResultSet rs=stmt.executeQuery(sql);
 		rs.last();
@@ -566,7 +566,7 @@ public class ReturnData {
 		rs.beforeFirst();
 		Object r1[][];
 		r1=new Object[k][100];
-		Object s1[] = { "×Ü½ğ¶î","×ÜÊÛ¶î", "±ê¼Ç"};
+		Object s1[] = { "æ€»é‡‘é¢","æ€»å”®é¢", "æ ‡è®°"};
 		JTable tb1 = new JTable(r1, s1);
 		for (int i = 0; i < k && rs.next(); i++) {
 			r1[i][0] = rs.getString(1);

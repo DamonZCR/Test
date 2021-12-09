@@ -20,6 +20,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/university/io/GetTextPrint.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/io/IOBufferFast.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/io/ReadLine.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/university/jFrame/ButtonLeftUse.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/jFrame/Time.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/net/IPHostName.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/net/TCPFileServer.java" charset="UTF-8" />

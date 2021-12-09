@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import postgraduate.studyJava.testJSON.FastJsonTestUse.LoginResMes;
 import postgraduate.studyJava.testJSON.FastJsonTestUse.Message;
+import postgraduate.studyJava.testJSON.FastJsonTestUse.NotifyUserStatusMes;
 
 import java.io.*;
 import java.net.Socket;
@@ -48,13 +49,9 @@ public class ReadPkgTest {
             System.out.println("接收的消息类型：" + mes.getType());
             System.out.println("接收的消息：" + mes.getData());
             // 转为LoginResMes对象。
-            LoginResMes lrm = JSON.parseObject(mes.getData(), LoginResMes.class);
-            System.out.println(lrm.getCode());
-            System.out.println(lrm.getUserName());
-            System.out.println(lrm.getError());
-            int[] arr = lrm.getUsersId();//接收数组也可以。
-            for (int i : arr)
-                System.out.println(i);
+            NotifyUserStatusMes lrm = JSON.parseObject(mes.getData(), NotifyUserStatusMes.class);
+            System.out.println(lrm.getUserId());
+            System.out.println(lrm.getStatus());
         }
     }
     /*×将一个字节数组转换为一个整数，按照低位在后，高位在前的顺序

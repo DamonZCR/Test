@@ -8,7 +8,7 @@ import java.util.TimerTask;
 public class Time {
 
 	public Time() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 	}
 	
 	public String TimeTest2(){
@@ -16,7 +16,7 @@ public class Time {
 		final SimpleDateFormat a2=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		  TimerTask task=new TimerTask(){
 			public void run() {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				a2.format(new Date());
 			}
 			

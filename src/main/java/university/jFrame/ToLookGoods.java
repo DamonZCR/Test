@@ -24,26 +24,26 @@ import javax.swing.JTextField;
 public class ToLookGoods implements ActionListener{
 
 	public ToLookGoods() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 	}
-	Connection conn;//¶¨ÒåÁ¬½Ó½Ó¿Ú¶ÔÏóconn
-	Statement stmt;//¶¨ÒåÖ´ĞĞÓï¾ä½Ó¿Ú¶ÔÏóstmt
-	public void connection(){//Á¬½ÓÊı¾İ¿â;
+	Connection conn;//å®šä¹‰è¿æ¥æ¥å£å¯¹è±¡conn
+	Statement stmt;//å®šä¹‰æ‰§è¡Œè¯­å¥æ¥å£å¯¹è±¡stmt
+	public void connection(){//è¿æ¥æ•°æ®åº“;
 		try{
-  			Class.forName("com.mysql.jdbc.Driver");//×°ÔØÇı¶¯³ÌĞò
-			//ODBCÊı¾İÔ´studentManage
-  			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf8","root","123456");      					
-  			stmt=conn.createStatement();//»ñµÃÖ´ĞĞÓï¾ä¶ÔÏóstmt
+  			Class.forName("com.mysql.jdbc.Driver");//è£…è½½é©±åŠ¨ç¨‹åº
+			//ODBCæ•°æ®æºstudentManage
+  			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf8","root","root");
+  			stmt=conn.createStatement();//è·å¾—æ‰§è¡Œè¯­å¥å¯¹è±¡stmt
 		}catch(ClassNotFoundException e1){
-  			System.err.println("Çı¶¯³ÌĞò×°ÔØÊ§°Ü£¡");
+  			System.err.println("é©±åŠ¨ç¨‹åºè£…è½½å¤±è´¥ï¼");
 		}catch(SQLException e2){
   			e2.getSQLState();
   			e2.getMessage();
 		}
 	}
-	JLabel l1=new JLabel("ÇëÊäÈëÄãÒª²éÑ¯µÄÈÕÆÚ");
-	JTextField t1=new JTextField("¸ñÊ½Îª£ºyyyy-mm-dd",15);
-	JButton b1=new JButton("²éÑ¯");
+	JLabel l1=new JLabel("è¯·è¾“å…¥ä½ è¦æŸ¥è¯¢çš„æ—¥æœŸ");
+	JTextField t1=new JTextField("æ ¼å¼ä¸ºï¼šyyyy-mm-dd",15);
+	JButton b1=new JButton("æŸ¥è¯¢");
 	Component p41() {
 		JPanel p41=new JPanel();
 		JPanel p47=new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -62,17 +62,17 @@ public class ToLookGoods implements ActionListener{
 		return p41;
 		
 	}
-	JLabel l2=new JLabel("ÇëÊäÈëÄãÒª²éÑ¯µÄÊ±¶Î£º");
-	JLabel l3=new JLabel("ÆğÊ¼Ê±¼ä£º");
-	JLabel l4=new JLabel("½áÊøÊ±¼ä£º");
-	JTextField t2=new JTextField("¸ñÊ½Îª£ºyyyy-mm-dd",12);
-	JTextField t3=new JTextField("¸ñÊ½Îª£ºyyyy-mm-dd",12);
-	JButton b2=new JButton("²éÑ¯");
+	JLabel l2=new JLabel("è¯·è¾“å…¥ä½ è¦æŸ¥è¯¢çš„æ—¶æ®µï¼š");
+	JLabel l3=new JLabel("èµ·å§‹æ—¶é—´ï¼š");
+	JLabel l4=new JLabel("ç»“æŸæ—¶é—´ï¼š");
+	JTextField t2=new JTextField("æ ¼å¼ä¸ºï¼šyyyy-mm-dd",12);
+	JTextField t3=new JTextField("æ ¼å¼ä¸ºï¼šyyyy-mm-dd",12);
+	JButton b2=new JButton("æŸ¥è¯¢");
 	
 	Component p42() {
 		JPanel p41=new JPanel(new FlowLayout(FlowLayout.CENTER));
 		p41.setBackground(new Color(173, 216, 230));
-		l2.setFont(new Font("ËÎÌå", Font.PLAIN, 22));
+		l2.setFont(new Font("å®‹ä½“", Font.PLAIN, 22));
 		p41.add(l2);
 		p41.add(l3);
 		p41.add(t2);
@@ -88,20 +88,20 @@ public class ToLookGoods implements ActionListener{
 		return p41;
 		
 	}
-	//µ¥ÈÕ²éÑ¯
+	//å•æ—¥æŸ¥è¯¢
 	Component j41(String time) {
 		JPanel panel1 = new JPanel(new BorderLayout());
 		JFrame j1=new JFrame();
 		try {
 			connection();
-			String sql="select * from ÈÕÊÛ»õ×Ü±í  where ÈÕÆÚ ='"+time+"'";
+			String sql="select * from æ—¥å”®è´§æ€»è¡¨  where æ—¥æœŸ ='"+time+"'";
 			ResultSet rs=stmt.executeQuery(sql);
 			rs.last();
 			int k=rs.getRow();
 			rs.beforeFirst();
 			Object r1[][];
 			r1=new Object[k][20];
-			Object s1[] = { "ÈÕÆÚ","ÕËºÅ", "ĞÕÃû", "ÉÌÆ·±àºÅ","ÉÌÆ·","³§ÉÌ","µ¥¼Û","ÕÛ¿Û","Êµ¼Û","ÊıÁ¿"};
+			Object s1[] = { "æ—¥æœŸ","è´¦å·", "å§“å", "å•†å“ç¼–å·","å•†å“","å‚å•†","å•ä»·","æŠ˜æ‰£","å®ä»·","æ•°é‡"};
 			JTable tb1 = new JTable(r1, s1);
 			if (k != 0) {
 				for (int i = 0; i < k && rs.next(); i++) {
@@ -129,24 +129,24 @@ public class ToLookGoods implements ActionListener{
 				j1.setVisible(true);
 			}
 			else{
-				JOptionPane.showMessageDialog(null,"±¾ÈÕ›]ÓĞÉÌÆ·ÊÛ³ö");
+				JOptionPane.showMessageDialog(null,"æœ¬æ—¥æ²’æœ‰å•†å“å”®å‡º");
 			}
 			
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.getMessage();
 			e.printStackTrace();
 		}
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 			return j1;
 	}
-	//Ê±¶Î²éÑ¯
+	//æ—¶æ®µæŸ¥è¯¢
 	Component j42(String time1,String time2) {
 		JPanel panel1 = new JPanel(new BorderLayout());
 		JFrame j2=new JFrame();
 		try {
 			connection();
-			String sql="select * from ÊÕÖ§Ïê±í  where ÈÕÆÚ>='"+time1+"' and ÈÕÆÚ<='"+time2+"'";
+			String sql="select * from æ”¶æ”¯è¯¦è¡¨  where æ—¥æœŸ>='"+time1+"' and æ—¥æœŸ<='"+time2+"'";
 			Statement stmt=conn.createStatement();
 			ResultSet rs=stmt.executeQuery(sql);
 			rs.last();
@@ -154,7 +154,7 @@ public class ToLookGoods implements ActionListener{
 			rs.beforeFirst();
 			Object r1[][];
 			r1=new Object[k][20];
-			Object s1[] = { "ÈÕÆÚ","½ø»õ×Ü¶î", "ÊÛ»õ×Ü¶î", "¼ÇºÅ"};
+			Object s1[] = { "æ—¥æœŸ","è¿›è´§æ€»é¢", "å”®è´§æ€»é¢", "è®°å·"};
 			JTable tb1 = new JTable(r1, s1);
 			if (k != 0) {
 				for (int i = 0; i < k && rs.next(); i++) {
@@ -176,25 +176,25 @@ public class ToLookGoods implements ActionListener{
 				j2.setVisible(true);
 			}
 			else{
-				JOptionPane.showMessageDialog(null,"Õâ¶ÎÊ±¼äÀï›]ÓĞÉÌÆ·ÊÛ³ö£¡");
+				JOptionPane.showMessageDialog(null,"è¿™æ®µæ—¶é—´é‡Œæ²’æœ‰å•†å“å”®å‡ºï¼");
 			}
 			
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.getMessage();
 			e.printStackTrace();
 		}
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 			return j2;
 	}
-	//ä¯ÀÀÈ«²¿
+	//æµè§ˆå…¨éƒ¨
 
 	Component j43() {
 		JPanel panel1 = new JPanel(new BorderLayout());
 		JFrame j2=new JFrame();
 		try {
 			connection();
-			String sql="select * from ÊÕÖ§Ïê±í";
+			String sql="select * from æ”¶æ”¯è¯¦è¡¨";
 			Statement stmt=conn.createStatement();
 			ResultSet rs=stmt.executeQuery(sql);
 			rs.last();
@@ -202,7 +202,7 @@ public class ToLookGoods implements ActionListener{
 			rs.beforeFirst();
 			Object r1[][];
 			r1=new Object[k][20];
-			Object s1[] = { "ÈÕÆÚ","½ø»õ×Ü¶î", "ÊÛ»õ×Ü¶î", "¼ÇºÅ"};
+			Object s1[] = { "æ—¥æœŸ","è¿›è´§æ€»é¢", "å”®è´§æ€»é¢", "è®°å·"};
 			JTable tb1 = new JTable(r1, s1);
 			for (int i = 0; i < k && rs.next(); i++) {
 				r1[i][0] = rs.getString(1);
@@ -225,13 +225,13 @@ public class ToLookGoods implements ActionListener{
 			j2.setLocation(300, 300);
 			j2.setVisible(true);
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.getMessage();
 			e.printStackTrace();
 		}
 		
 			
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 			return j2;
 	}
 	@Override
@@ -243,7 +243,7 @@ public class ToLookGoods implements ActionListener{
 		if(e.getSource()==b2){
 			j42(t2.getText(),t3.getText());
 		}
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		
 	}
 

@@ -19,13 +19,13 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 public class Ready  extends JFrame implements ActionListener{
-	JButton b1=new JButton("È·¶¨");
+	JButton b1=new JButton("ç¡®å®š");
 	JTextField t1=new JTextField(8);
 
 	public Ready() {
-		super("±¸·İ");
-		JLabel l1=new JLabel("Êı¾İÎÄ¼ş½«×Ô¶¯±¸·İµ½×ÀÃæ");
-		JLabel l2=new JLabel("±¸·İÎÄ¼şÃû");
+		super("å¤‡ä»½");
+		JLabel l1=new JLabel("æ•°æ®æ–‡ä»¶å°†è‡ªåŠ¨å¤‡ä»½åˆ°æ¡Œé¢");
+		JLabel l2=new JLabel("å¤‡ä»½æ–‡ä»¶å");
 		Container c=getContentPane();
 		c.setLayout(new FlowLayout(FlowLayout.CENTER));
 		c.add(l1);
@@ -38,7 +38,7 @@ public class Ready  extends JFrame implements ActionListener{
 		this.setVisible(true);
 		this.setLocationRelativeTo(null);
 		
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 	}
 	public static String comman="C:\\wamp\\bin\\mysql\\mysql5.5.24\\bin\\mysqldump -u root -p123456 shop";
     public static void back(String mySqlBackupName,String mysqlBackupPath, String command){
@@ -70,7 +70,7 @@ public class Ready  extends JFrame implements ActionListener{
             writer.close();     
             fout.close();
             
-            //logger.info("MYSQL±¸·İ³É¹¦");
+            //logger.info("MYSQLå¤‡ä»½æˆåŠŸ");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -82,10 +82,10 @@ public class Ready  extends JFrame implements ActionListener{
 			String s=t1.getText();
 			back(s,"C:\\Users\\Administrator\\Desktop",comman);
 		     
-            JOptionPane.showMessageDialog(null,"±¸·İ³É¹¦£¡");
+            JOptionPane.showMessageDialog(null,"å¤‡ä»½æˆåŠŸï¼");
             this.setVisible(false);
 		}
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		
 	}
 
