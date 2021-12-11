@@ -1,3 +1,7 @@
 在实际开发中，并不是自己去写这么麻烦的读写操作，
 而是使用封装好的IO流包，如apache提供的第三方包commons.io下的FileUtils类
 QuickCopy.java中进行测试。
+
+AddJavaProperties类是读取属性文件中的字符串资源:
+    属性文件(.properties)是Java程序中的常用文本存储方式，象STRUTS框架就是利用属性文件存储程序中的字符串资源。
+    如一些配置需要写到文件中，程序启动后加载，可以用这个方法实现。

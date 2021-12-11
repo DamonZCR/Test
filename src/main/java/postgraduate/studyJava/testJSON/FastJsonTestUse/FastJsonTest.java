@@ -16,6 +16,11 @@ import com.alibaba.fastjson.JSON;
  * private String firstName;
  * @JSONField(name="DATE OF BIRTH", format="dd/MM/yyyy", ordinal = 3)
  * private Date dateOfBirth;
+ *
+ * @JSONField deserialize 可选项可以指定字段不反序列化。
+ * @JSONField(name = "DATE OF BIRTH", deserialize=false)
+ * private Date dateOfBirth;
+ *
  * 以上代码中我们列出了基本参数类别，并使用 @JSONField 注解，以便实现自定义转换：
  *     format 参数用于格式化 date 属性。
  *     默认情况下， FastJson 库可以序列化 Java bean 实体， 但我们可以使用 serialize 指定字段不序列化。
