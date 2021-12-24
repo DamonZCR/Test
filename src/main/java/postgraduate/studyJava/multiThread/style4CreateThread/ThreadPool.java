@@ -1,6 +1,5 @@
 package postgraduate.studyJava.multiThread.style4CreateThread;
 
-import java.util.Hashtable;
 import java.util.concurrent.*;
 
 /**
@@ -44,7 +43,7 @@ public class ThreadPool {
         ex.execute(new AThread());//适合适用于Runnable
         ex.execute(new AThread());//适合适用于Runnable
 
-        Future sb = ex.submit(new AsThread());//适合适用于Callable
+        Future sb = ex.submit(new AsThread());//适用于Callable
         try {//获取返回值。
             System.out.println(sb.get());
         } catch (InterruptedException e) {

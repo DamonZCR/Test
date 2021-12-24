@@ -22,8 +22,6 @@ package postgraduate.leetcd.swordToOffer;
  * 示例 2：
  * 输入：A = [3,4,5,1,2], B = [4,1]
  * 输出：true
- *
- *
  */
 public class StructureofTree {
     private boolean isSubStructure(TreeNode A, TreeNode B){
