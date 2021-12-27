@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-/**
+/** 全排列
  * 现在有一个没有重复元素的整数集合S，求S的所有子集
  * 注意:你给出的子集中的元素必须按升序排列给出的解集中不能出现重复的元素
  * 例如:
@@ -29,6 +29,7 @@ public class AllSetSon {
         getArr(list, result, temp, level);
         System.out.println(result);
     }
+
     private static void getArr(List<Integer> list, List<List<Integer>> result, List<Integer> temp, int level)
     {
         if(level == list.size()){
@@ -36,7 +37,7 @@ public class AllSetSon {
             result.add(temp);
         }else {
             getArr(list, result, new ArrayList(temp), level+1);
-            temp.add(list.get(level));
+            temp.add(list.get(level));// 添加这个元素到右子树。
             getArr(list, result, new ArrayList(temp), level+1);
         }
     }

@@ -13,7 +13,7 @@ import java.util.concurrent.FutureTask;
  * 3. Callable是支持泛型的
  */
 //1.创建一个实现Callable的实现类
-class NumThread implements Callable{
+class  NumThread implements Callable{
     //2.实现call方法，将此线程需要执行的操作声明在call()中
     public Object call() throws Exception {
         int num = 0,res = 0;
