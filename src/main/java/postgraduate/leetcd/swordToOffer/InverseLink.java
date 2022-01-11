@@ -1,5 +1,6 @@
 package postgraduate.leetcd.swordToOffer;
 
+import postgraduate.leetcd.ListNode;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -11,13 +12,7 @@ import java.util.Collections;
  * 输出：[2,3,1]
 
  */
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) {
-        val = x;
-    }
-}
+
 public class InverseLink {
     public static void main(String[] args) {
 

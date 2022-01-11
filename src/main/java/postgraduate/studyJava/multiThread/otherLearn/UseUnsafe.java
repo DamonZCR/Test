@@ -31,6 +31,7 @@ public class UseUnsafe {
             Field field = Unsafe.class.getDeclaredField("theUnsafe");
             field.setAccessible(true);
             nosafe = (Unsafe) field.get(null);//获取Unsafe对象。
+
             I_OFFSET = nosafe.objectFieldOffset(UseUnsafe.class.getDeclaredField("i"));//获取到偏移量
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
@@ -43,10 +44,11 @@ public class UseUnsafe {
             @Override
             public void run() {
                 while (true){
+                    // 被取的对象，偏移量，该属性的预期值，想要更新后的值。
                     boolean a = nosafe.compareAndSwapInt(useUnsafe, I_OFFSET, useUnsafe.i, useUnsafe.i + 1);
 
                     if (a)
-                        System.out.println("值被线程一更新:" + nosafe.getIntVolatile(useUnsafe, I_OFFSET));
+                        System.out.println("值被线程一更新:" + nosafe.getIntVolatile(useUnsafe, I_OFFSET));//从对象中偏移量的位置取值
                     try {
                         Thread.sleep(500);
                     }catch (InterruptedException e){

@@ -8,6 +8,5 @@ public class GouZaoFunc1 {
         ConcurrentHashMap<String, Integer> chm = new ConcurrentHashMap<>();
         chm.put("one", 1);
         System.out.println(chm.get("one"));
-        AtomicInteger ac = new AtomicInteger();
     }
 }

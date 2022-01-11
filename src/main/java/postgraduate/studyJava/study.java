@@ -24,6 +24,28 @@ public class study {
         System.out.println(m.equals("T"));
         System.out.println(Integer.MAX_VALUE);
     }
+    @Test
+    public void study3(){
+        int x = 32;
+        int y = x + (x >>> 1) + 1;
+        int w = 9;
+        System.out.println(w >>> 1);
+        System.out.println(y);
+
+        int MAXIMUM_CAPACITY = 1 << 30;
+        int n = y - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        int u = (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+        System.out.println(u);
+
+        int q = 16;
+        q |= q >>> 16;
+        System.out.println(q);
+    }
 
     @Test
     public void test2(){

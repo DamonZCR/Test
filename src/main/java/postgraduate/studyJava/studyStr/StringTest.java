@@ -175,6 +175,12 @@ public class StringTest {
         System.out.println(C.equals(D)); // true
         System.out.println(C == D); // true
 
+        String E = new String("倒霉的一年");
+        E.intern();
+        String F = "倒霉的一年";
+        System.out.println(E.equals(F)); // true
+        System.out.println(E == F); // false
+
         // 加强知识1
         String a = "hellonihao";
         String b = "hello" + "nihao";
@@ -209,6 +215,18 @@ public class StringTest {
         String b = new String("hello");
         String c = a.intern();
         System.out.println(c == a);
+
+        String s1 = new String("hello");
+        s1.intern();
+        String s2 = "hello";
+        System.out.println(s1 == s2);   //true
+
+        String s3 = new String("hello ") + new String("World!");
+        s1.intern();
+        String s4 = "hello World!";
+        System.out.println(s3 == s4);   //true
+
+
     }
     @Test
     public void AChinese(){
