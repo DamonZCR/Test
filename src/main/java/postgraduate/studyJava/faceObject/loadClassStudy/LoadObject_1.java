@@ -1,6 +1,8 @@
-package postgraduate.studyJava.faceObject;
+package postgraduate.studyJava.faceObject.loadClassStudy;
 /**
  * 演示类的加载过程，代码执行的顺序。
+ * 给出了程序在执行时，子类与父类的加载顺序，已经类中初始化代码块、实例代码块
+ * 的执行顺序还有构造方法的执行顺序。
  */
 
 class Base{
