@@ -6,3 +6,6 @@ hotDeploy包给出一种热部署的尝试，当被加载的.class文件发生�
     类加载器加载有什么好处呢？系统的类加载使用同一个ClassLoader, 类只会被加载一次，加载后，即使class文件已经变
     了，再次加载，得到的也还是原来的Class对象，因为类已经被加载了，而使用MyClassLoader，则可以先创建一个新的
     ClassLoader，再用它加载Class，得到的Class对象就是新的，从而实现动态更新。
+
+testClassLoader包下是测试类的加载机制，给出怎么查看当前类的加载器？使用ClassLoader加载器和forName加载器的区别？
+    启动类加载器负载加载什么？

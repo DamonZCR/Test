@@ -3,6 +3,9 @@ package postgraduate.studyJava.faceObject.loadClassStudy.hotDeploy;
 import university.io.BinaryFileUtils;
 import java.io.IOException;
 
+/** 实现加载类的功能.指定.class文件就返回此类对象。
+ * 
+ */
 public class MyClassLoader extends ClassLoader{
     private static final String BASE_DIR = "D:\\IDEA\\Test\\src\\main\\java\\";
 
