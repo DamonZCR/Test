@@ -1,10 +1,6 @@
 package postgraduate.leetcd;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import postgraduate.leetcd.link.DetectCycle;
 
 /**
  * leetcode ID 17

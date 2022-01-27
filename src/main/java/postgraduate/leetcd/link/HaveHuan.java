@@ -1,7 +1,9 @@
-package postgraduate.leetcd;
+package postgraduate.leetcd.link;
 /**141环形链表
  * 给你一个链表的头节点 head ，判断链表中是否有环。
  */
+
+import postgraduate.leetcd.ListNode;
 
 import java.util.HashSet;
 
