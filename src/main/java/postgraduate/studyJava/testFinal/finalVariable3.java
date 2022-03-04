@@ -1,4 +1,4 @@
-package postgraduate.testFinal;
+package postgraduate.studyJava.testFinal;
 
 public class finalVariable3 {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class finalVariable3 {
     }
 
     private static void changeValue(StringBuffer buffer) {
-        //×¢ÒâÉÏÃæÀ¨ºÅÀïµÄÐÎ²Î²¢Ã»ÓÐÓÃµ½£¬ÏÔÊ¾»ÒÉ«¡£
+        //×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î²Î²ï¿½Ã»ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½É«ï¿½ï¿½
         buffer  = new StringBuffer("Hi");
         buffer.append(" World!");
         System.out.println(buffer);//  Hi World!
