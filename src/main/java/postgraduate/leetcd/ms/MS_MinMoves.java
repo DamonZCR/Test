@@ -3,7 +3,7 @@ package postgraduate.leetcd.ms;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/** 微软-移动的最少次数.jpg
+/** 微软-MS_MinMoves.jpg
  * 有一个由N个整数组成的数组A，按非递减顺序排列。在一次移动中，你可以从A中移除一个整数，或者在A的任何元素之前或之后插入一个整数。
  * 目标是实现一个数组，其中所有的值X在数组中恰好出现X次。
  * 例如，给定a =[1,1,3,4,4,4]，值1出现两次，值3出现一次，值4出现三次。可以在1和3中分别删除一个匹配项，并插入一个匹配项4，

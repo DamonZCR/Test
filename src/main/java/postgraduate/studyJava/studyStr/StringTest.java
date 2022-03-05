@@ -85,6 +85,7 @@ public class StringTest {
         // 定位输出字符串中的某位置字符
         String s = "12345";
         System.out.println(s.charAt(2));// 3
+        System.out.println(s.length());// 3
     }
     @Test
     public void test3(){
