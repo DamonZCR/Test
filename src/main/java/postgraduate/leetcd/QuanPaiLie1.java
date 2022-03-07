@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 /**46. 全排列
  * 重点参考SortTheStr2.java题思路。
- *给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
+ *给定一个不含重复数字的数组 nums ，返回其所有可能的全排列 。你可以 按任意顺序 返回答案。
  *     1 <= nums.length <= 6
  *     -10 <= nums[i] <= 10
  *     nums 中的所有整数 互不相同
