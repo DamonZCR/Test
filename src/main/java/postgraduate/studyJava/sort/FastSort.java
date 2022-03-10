@@ -10,8 +10,8 @@ public class FastSort {
         int pivot = 0;
         if(left < right) {
             pivot = partition(arr, left, right);
-            quickSort(arr, left, pivot-1);
-            quickSort(arr, pivot+1, right);
+            quickSort(arr, left, pivot - 1);
+            quickSort(arr, pivot + 1, right);
         }
     }
 
@@ -32,7 +32,7 @@ public class FastSort {
     }
 
     public static void main(String[] args) {
-        int arr[] = {65,58,95,10,57,62,13,106,78,23,85};
+        int arr[] = {65,58,95,10,57,62,13,106,78,23,-1};
         System.out.println("排序前：" + Arrays.toString(arr));
         quickSort(arr, 0, arr.length-1);
         System.out.println("排序后：" + Arrays.toString(arr));
