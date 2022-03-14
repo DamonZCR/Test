@@ -1,13 +1,17 @@
 package postgraduate.leetcd.swordToOffer;
 
 public class JianShengzi {
+    public static void main(String[] args) {
+        System.out.println(cuttingRope(5));
+        System.out.println(cuttingRope2(5));
+    }
     /**
      * 使用数学推导总结的经验完成：
      * 规律1：
      * @param n
      * @return
      */
-    public int cuttingRope(int n){
+    public static int cuttingRope(int n){
         if (n <= 3)
             return n - 1;
         int a = n / 3;
@@ -34,9 +38,15 @@ public class JianShengzi {
      * @param n
      * @return
      */
-    public int cuttingRope2(int n){
-        int[] dp = new int[n];
+    public static int cuttingRope2(int n){
+        int[] dp = new int[n + 1];
         dp[2] = 1;
-        return 4;
+
+        for (int i = 3; i < n + 1; i++) {
+            for (int j = 2; j < n + 1; j++) {
+                dp[i] = Math.max(dp[i], Math.max(j * (i - j), (i - j) * dp[j]));
+            }
+        }
+        return dp[n];
     }
 }
