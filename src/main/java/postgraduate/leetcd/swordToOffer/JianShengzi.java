@@ -44,6 +44,7 @@ public class JianShengzi {
 
         for (int i = 3; i < n + 1; i++) {
             for (int j = 2; j < n + 1; j++) {
+                // 关键在于：Max中继续使用dp[j],去访问记录过的j的最大值；
                 dp[i] = Math.max(dp[i], Math.max(j * (i - j), (i - j) * dp[j]));
             }
         }
