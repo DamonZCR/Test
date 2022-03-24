@@ -1,11 +1,7 @@
 package postgraduate.leetcd.swordToOffer;
 
-import com.sun.deploy.security.SelectableSecurityManager;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
 
 /**剑指 Offer 41. 数据流中的中位数
  * 如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于

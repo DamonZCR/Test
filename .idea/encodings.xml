@@ -2,17 +2,9 @@
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/AllSetSon.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/BestMinSort.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/file/HuanEntr.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/file/MidExpend.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/lanqiao/Java11D.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/ms/file/ALi_MakeJingTi_1.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/ms/file/ALi_MakeJingTi_2.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/leetcd/ms/file/MS_MinMoves.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/play/学生管理系统.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/StackTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/faceObject/loadClassStudy/hotDeploy/HelloImpl.class" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/sort/BucketSort.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/BMItest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/BubbleSort.java" charset="UTF-8" />
