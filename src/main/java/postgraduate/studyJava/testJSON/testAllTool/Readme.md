@@ -1,9 +1,48 @@
-测试所有的四种JOSN工具的打包和解包速度性能；
-这4个JSON类库分别为：Gson，FastJson，Jackson，Json-lib
+测试四种JOSN工具的打包和解包速度性能；
+这4个JSON类库分别为：Gson，FastJson，Jackson，Json-lib；
+测量结果将输出至控制台：
 
-依赖添加：
+如序列化性能结果输出：
+
+```Java
+Benchmark  (count)  Mode  Cnt   Score   Error  Units
+FastJson     1000    ss        0.267           s/op
+FastJson    10000    ss        0.471           s/op
+FastJson   100000    ss        0.970           s/op
+Gson         1000    ss        0.299           s/op
+Gson        10000    ss        0.288           s/op
+Gson       100000    ss        1.664           s/op
+Jackson      1000    ss        0.557           s/op
+Jackson     10000    ss        0.360           s/op
+Jackson    100000    ss        0.702           s/op
+JsonLib      1000    ss        0.615           s/op
+JsonLib     10000    ss        3.735           s/op
+JsonLib    100000    ss       14.224           s/op
+```
+
+发序列化结果输出：
+
+```Java
+Benchmark  (count)  Mode  Cnt   Score   Error  Units
+FastJson     1000    ss        0.386           s/op
+FastJson    10000    ss        0.360           s/op
+FastJson   100000    ss        1.224           s/op
+Gson         1000    ss        0.261           s/op
+Gson        10000    ss        0.271           s/op
+Gson       100000    ss        1.075           s/op
+Jackson      1000    ss        0.350           s/op
+Jackson     10000    ss        0.594           s/op
+Jackson    100000    ss        1.015           s/op
+JsonLib      1000    ss        1.122           s/op
+JsonLib     10000    ss        3.774           s/op
+JsonLib    100000    ss       27.381           s/op
+```
+
+代码需要的依赖添加：
+
+```Java
 <dependency>
-    <!--json转换使用，对应testJSON中MyJson.java-->
+    <!--json转换使用-->
     <groupId>com.alibaba</groupId>
     <artifactId>fastjson</artifactId>
     <version>1.2.62</version>
@@ -42,4 +81,5 @@
     <version>1.34</version>
     <scope>provided</scope>
 </dependency>
+```
 

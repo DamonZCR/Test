@@ -14,7 +14,7 @@ import postgraduate.studyJava.testJSON.testAllTool.utils.JsonLibUtil;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-/**
+/** 反序列化为Java对象
  * Benchmark                                             (count)  Mode  Cnt   Score   Error  Units
  * studyJava.testJSON.testAllTool.PullFromJson.FastJson     1000    ss        0.386           s/op
  * studyJava.testJSON.testAllTool.PullFromJson.FastJson    10000    ss        0.360           s/op
