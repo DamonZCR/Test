@@ -1,0 +1,45 @@
+测试所有的四种JOSN工具的打包和解包速度性能；
+这4个JSON类库分别为：Gson，FastJson，Jackson，Json-lib
+
+依赖添加：
+<dependency>
+    <!--json转换使用，对应testJSON中MyJson.java-->
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.62</version>
+</dependency>
+<!-- Json libs-->
+<dependency>
+    <groupId>net.sf.json-lib</groupId>
+    <artifactId>json-lib</artifactId>
+    <version>2.2.3</version>
+    <classifier>jdk15</classifier>
+</dependency>
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.3.1</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.12.5</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.12.5</version>
+</dependency>
+<!--测试JSON打包性能时使用，用于输出日志JDK日志信息-->
+<dependency>
+    <groupId>org.openjdk.jmh</groupId>
+    <artifactId>jmh-core</artifactId>
+    <version>1.34</version>
+</dependency>
+<dependency>
+    <groupId>org.openjdk.jmh</groupId>
+    <artifactId>jmh-generator-annprocess</artifactId>
+    <version>1.34</version>
+    <scope>provided</scope>
+</dependency>
+

@@ -1,7 +1,6 @@
 package postgraduate.studyJava.multiThread.style3CreateThread;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
 
 /**
  * 创建线程的方式三：实现Callable接口。 --- JDK 5.0新增
@@ -28,7 +27,10 @@ class  NumThread implements Callable{
     }
 }
 public class ThreadTest3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        /* 以下是使用FutureTask来接收返回，
+            另下一个是直接使用Future来接收；
+
         //3.创建Callable接口实现类的对象
         NumThread nt = new NumThread();
         //4.将此Callable接口实现类的对象作为传递到FutureTask构造器中，创建FutureTask的对象
@@ -43,6 +45,16 @@ public class ThreadTest3 {
             System.out.println("总和为：" + ft.get());
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future future = executorService.submit(new Callable(){
+            public Object call() throws Exception {
+                System.out.println("Asynchronous Callable");
+                return "Callable Result";
+            }
+        });
+
+        System.out.println("future.get() = " + future.get());
+        executorService.shutdownNow();
     }
 }
