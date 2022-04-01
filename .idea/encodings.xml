@@ -8,6 +8,9 @@
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/play/学生管理系统.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/StackTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/sort/BucketSort.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/testJVM/CanReliveObj.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/testJVM/StrongReferenceTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/postgraduate/studyJava/testJVM/SystemGCTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/BMItest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/BubbleSort.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/university/demo/ConnDB.java" charset="UTF-8" />

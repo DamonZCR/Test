@@ -44,7 +44,13 @@ public class A1_YuanLi {
         public void run() {
             System.out.println(name);
             while (true){
-
+                if (name.contains("13")){
+                    for (int j = 0; j < 100000; j++) {
+                // 加上if是为了让最大线程数里的线程结束一个，测试顶上来的线程是来自
+                        // 任务队列还是剩余的任务。
+                    }
+                    break;
+                }
             }
         }
     }
