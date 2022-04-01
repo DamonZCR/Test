@@ -1,4 +1,4 @@
-package postgraduate.leetcd.swordToOffer;
+package postgraduate.leetcd.ms;
 
 import java.util.ArrayList;
 import java.util.Scanner;
