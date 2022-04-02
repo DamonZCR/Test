@@ -1,6 +1,9 @@
 package postgraduate.studyJava;
 
 import org.junit.Test;
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class study {
@@ -136,5 +139,14 @@ public class study {
     private void testFunc(int[] num){
         // 传进的数组，首位可以直接赋值。
         num[0] = 10;
+    }
+    @Test
+    public void testPrint(){
+        // 格式化输出小数的两个方式，其中一种可用于禁止四舍五入；
+        double d = 666.1234567f;
+        DecimalFormat ff = new DecimalFormat("0.0000");
+        ff.setRoundingMode(RoundingMode.DOWN);//向下取整，取消四舍五入
+        System.out.printf("%.4f\n", d);//666.1235
+        System.out.println(ff.format(d));//666.1234
     }
 }

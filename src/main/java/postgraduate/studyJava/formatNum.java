@@ -1,6 +1,7 @@
 package postgraduate.studyJava;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 // 格式化输出。
 
@@ -9,16 +10,17 @@ public class formatNum {
     public static void main(String[] args) {
         // Java 中 除 /  取余 %
         // float 会输出小数点后 6~7位。 double 输出后 15 位。
-        System.out.print("Java中 / 是除，但是两个整数直接除会得向下取整，需使用(double)int/int的形式：" + (double) 10/3);
+        System.out.print("Java中 / 是除，但是两个整数直接除会得向下取整得一个整数，需使用(double)int/int的形式：" + (double) 10/3);
         System.out.println("    如果不加强转，将是一个整数：" + 10/3);
 
 
         //方法一
         // DecimalFormat 格式化输出规定位数。
         //若是这种写法DecimalFormat df = new DecimalFormat("0.00000")，不管传入的任何值，均保留 指定位 小数
-        DecimalFormat df = new DecimalFormat("0.00000");
-        String res = df.format((float) 10/3);
-        System.out.println("方法一：使用DecimalFormat输出  " + res);
+        DecimalFormat df = new DecimalFormat("0.0000");
+        System.out.println("方法一：使用DecimalFormat输出  " + df.format(666.1234567f));
+        df.setRoundingMode(RoundingMode.DOWN);
+        System.out.println("       方法一：使用DecimalFormat输出并且禁止四舍五入  " + df.format(666.1234567f));
 
         // 方法二
         // 使用这种写法若小数点后均为零，则保留一位小数，并且有四舍五入的规则。
@@ -38,7 +40,7 @@ public class formatNum {
 
         // 拓展
         // 保留小数点后面不为0的两位小数，这种写法不能保证保留一定是保留两位小数，但能保证最后一位数不为0；
-        //若double d=2.00，输出结果为2；若double d=41.001，输出结果为41；
+        //若double d=2.00，输出结果为2；若double d=41.001，输出结果为41；也会进行四舍五入
         //若double d=41.010，输出结果为41.01；若double d=0，输出结果为0；若double d=0.200，输出结果为0.2
         DecimalFormat ff = new DecimalFormat("#.##");
         System.out.println("规范化取值：" + ff.format((float)10/3));
