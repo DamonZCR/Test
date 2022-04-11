@@ -1,6 +1,6 @@
 package postgraduate.leetcd.link;
 
-import postgraduate.leetcd.ListNode;
+import postgraduate.leetcd.xunLian.ListNode;
 
 /**找到环的入环口
  * 剑指 Offer II 022. 链表中环的入口节点

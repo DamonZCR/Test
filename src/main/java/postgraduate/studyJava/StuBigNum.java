@@ -18,7 +18,7 @@ import java.util.Scanner;
  *          加减               add(BigInteger two) 和 subtract(BigInteger two);
  *          取模 %              mod(BigInteger two) 需 参数为BigInteger类型 并且 大于 0，否则出现异常;
  *          求余 %              remainder(BigInteger two),注意：取模和求余只有在负数时结果不同。
- *          平方                one.pow(int two)，注意参数时 int 类型；
+ *          幂方                one.pow(int two)，注意参数时 int 类型；
  *          绝对值              one.abs()
  *          相反数              one.negate()
  *          求商和余数          divideAndRemainder(BigInteger two) 返回一个BigInteger数组, [0]是a/b 的商， [1]是a%b 的余;
@@ -118,15 +118,15 @@ public class StuBigNum {
         // 求商和余数
         BigInteger[] num = two.divideAndRemainder(one); // 返回一个BigInteger数组，
         // num[0]是a/b的商，num[1]是a%b的余
-        System.out.println(num[0]+" "+num[1]); // 1 0(商1，余0)
+        System.out.println("商：" + num[0]+" 余数："+num[1]); // 1 0(商1，余0)
 
         // 判断是否是素数
         boolean probablePrime = one.isProbablePrime(1); // 如果返回false，那么一定是合数。如果返回true可能是素数，概率和传入值有关
-        System.out.println(probablePrime);// false
+        System.out.println("判读是否为素数：" + probablePrime);// false
 
-        // 获取下一个素数，返回是合数的概率为2的-100次方。还有有概率返回偶数的。
+        // 获取下一个素数，返回是合数的概率为2的-100次方。还是有概率返回偶数的。
         BigInteger b = one.nextProbablePrime(); // 返回大于a的下一个素数
-        System.out.println(b); // 10000000000000000000000000000000000000000000121
+        System.out.println("获取下一个素数:" + b); // 10000000000000000000000000000000000000000000121
     }
     @Test
     public void test4(){

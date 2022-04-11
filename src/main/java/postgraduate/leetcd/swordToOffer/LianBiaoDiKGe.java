@@ -1,6 +1,6 @@
 package postgraduate.leetcd.swordToOffer;
 
-import postgraduate.leetcd.ListNode;
+import postgraduate.leetcd.xunLian.ListNode;
 
 /**剑指 Offer 22. 链表中倒数第k个节点
  *输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，

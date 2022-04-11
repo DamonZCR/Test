@@ -1,6 +1,6 @@
 package postgraduate.leetcd.swordToOffer;
 
-import postgraduate.leetcd.ListNode;
+import postgraduate.leetcd.xunLian.ListNode;
 import java.util.ArrayList;
 import java.util.Collections;
 

@@ -1,6 +1,6 @@
 package postgraduate.leetcd.swordToOffer;
 
-import postgraduate.leetcd.ListNode;
+import postgraduate.leetcd.xunLian.ListNode;
 
 /** 剑指 Offer 18. 删除链表的节点
  * 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。

@@ -1,6 +1,6 @@
 package postgraduate.leetcd.link;
 
-import postgraduate.leetcd.ListNode;
+import postgraduate.leetcd.xunLian.ListNode;
 import java.util.HashSet;
 
 /**
