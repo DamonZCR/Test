@@ -5,7 +5,7 @@ package postgraduate.leetcd.lanqiao;
  */
 public class ZuiDaGongYueShu {
     public static void main(String[] args) {
-        System.out.println(solve(2, 6));
+        System.out.println(solve(2, 0));
     }
     public static int solve(int a, int b){
         return b == 0 ? a:solve(b, a% b);

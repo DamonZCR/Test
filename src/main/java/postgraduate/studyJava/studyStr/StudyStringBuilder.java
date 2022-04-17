@@ -101,4 +101,12 @@ public class StudyStringBuilder {
         System.out.println("3、最后一次出现位置1：" + sb2.lastIndexOf("3"));
         System.out.println("4、定位最后出现位置2：" + sb2.lastIndexOf("3",4));
     }
+    @Test
+    public void testXiangDeng(){
+        // 测试StringBuilder的toString()方法返回的字符串是新建一个字符串对象
+        // 这个字符串对象保存中堆中，不是常量池中，所以下面不相等
+        String s = "ab";
+        String s1 = new StringBuilder("ab").toString().intern();
+        System.out.println(s==s1);
+    }
 }
