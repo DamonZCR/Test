@@ -29,8 +29,8 @@ import java.io.InputStreamReader;
  * 输出
  * 13
  * 说明
- * 第0天:2+9 * 0 =2 支付两元购买商品2;
- * 第1天:4+7 * 1=11，支付11元购买商品 3;
+ * 第0天:2 + 9 * 0 =2 支付两元购买商品2;
+ * 第1天:4 + 7 * 1=11，支付11元购买商品 3;
  * 因为是奇数天，所以可以免费领取商品1;
  *
  * 示例2
@@ -43,7 +43,7 @@ import java.io.InputStreamReader;
  * 说明
  * 第0天购买商品2，第一天购买商品1。总共花费11元。
  */
-public class BD_two {
+public class BD_MaiShangPin {
     public static void main(String[] args) throws IOException {
         sovle();
     }
@@ -52,7 +52,7 @@ public class BD_two {
         int N = Integer.parseInt(br.readLine());
         int[][] ab = new int[N][2];
         int res = 0;
-        boolean[] used = new boolean[N];
+        boolean[] used = new boolean[N];// 标记是否被购买
         for (int i = 0; i < N; i++) {
             used[i] = false;
             String[] s = br.readLine().split(" ");
@@ -60,12 +60,13 @@ public class BD_two {
             ab[i][1] = Integer.parseInt(s[1]);
         }
 
-        int date = 0;
-        int flag = 0;
+        int date = 0;// 天数
+        int flag = 0;// 用于标记购买商品的数量，达到N退出；
         while (true){
             date++;
             int index = 0;
             int min = Integer.MAX_VALUE;
+            // 找到价格最小的一天，不是涨价价格最小的；
             for (int i = 0; i < N; i++) {
                 if (!used[i]){//还未被使用
                     if (min > ab[i][0]){
@@ -79,6 +80,7 @@ public class BD_two {
             flag++;
             for (int i = 0; i < N; i++) {
                 if (!used[i]){//还未被使用
+                    // 涨价
                     ab[i][0] = ab[i][0] + ab[i][1] * date;
                 }
             }

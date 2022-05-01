@@ -104,7 +104,12 @@
       <artifactId>groovy</artifactId>
       <version>2.4.16</version>
     </dependency>
-
+    <!--导入JWT所需的JAR包，如果是JDK1.8那么只需要这一个包，更高版本还需要导入更多的包-->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
+    </dependency>
   </dependencies>
 
 </project>
