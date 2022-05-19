@@ -24,7 +24,8 @@ public class StartAndRun {
                 pong();
             }
         };
-        t.run();//输出：pangping
+        // t.run();//输出：pangping
+        t.start();//输出：pingpang
         System.out.print("ping");
     }
 

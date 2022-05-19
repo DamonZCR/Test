@@ -13,9 +13,10 @@ import java.util.LinkedList;
  */
 public class BuildTree_CengXu {
     public static void main(String[] args) throws IOException {
-        Integer[] is = InputBuildTree();
         // 以下两个为： 层序遍历建立树
-        new BuildTree_CengXu().ATree();
+        //new BuildTree_CengXu().ATree();
+
+        Integer[] is = InputBuildTree();
         new BuildTree_CengXu().ATree2(is); //建立树后返回根节点
     }
 
@@ -54,27 +55,26 @@ public class BuildTree_CengXu {
     }
     // 自己尝试层序遍历建立二叉树
     public static TreeNode ATree2(Integer[] a){
-        // Integer[] a = {1,2,3,4,null,5,null,6,7,8,9};
-        ArrayList<TreeNode> list = new ArrayList<>();
-        TreeNode root = new TreeNode(a[0]);
-        list.add(root);
+        LinkedList<TreeNode> list = new LinkedList<>();
+        TreeNode root = new TreeNode(a[0]);//根节点
+        list.offer(root);
 
         int i = 1;
         while(i < a.length){
-            // 不如使用LinkedList了
-            TreeNode treeNode = list.get(0);
-            list.remove(0);
-
-            if(a[i] != null){
-                TreeNode left = new TreeNode(a[i++]); // i++ 代表使用下一个值，如果上面a[i]为空，也需要向后移动一个
+            TreeNode treeNode = list.poll();
+            // 左节点
+            Integer val = a[i++];// 获取当前索引位置的值，获取后向后移动一位；
+            if(val != null){
+                TreeNode left = new TreeNode(val); // 当前值不为空，就加为左节点
                 treeNode.left = left;
-                list.add(left);
+                list.offer(left);
             }
-            Integer value = a[i++]; // i++ 代表继续向后移动。进入下一次while循环
-            if(value != null){
-                TreeNode right = new TreeNode(value);
+            // 右节点
+            val = a[i++]; //获取下一位值，i++ 代表继续向后移动。为进入下一次while循环做准备
+            if(val != null){
+                TreeNode right = new TreeNode(val);
                 treeNode.right = right;
-                list.add(right);
+                list.offer(right);
             }
         }
         // 两个方式树形输出二叉树
@@ -84,7 +84,7 @@ public class BuildTree_CengXu {
 
         return root;
     }
-    // 用于建立二叉树的输入，可以输入类似：[1,2,3,null,6,。。。]形式数组。饭后Integer类型数组。
+    // 用于建立二叉树的输入，可以输入类似：[1,2,3,null,6,。。。]形式数组。返回Integer类型数组。
     public static Integer[] InputBuildTree() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
