@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class study {
@@ -148,5 +149,11 @@ public class study {
         ff.setRoundingMode(RoundingMode.DOWN);//向下取整，取消四舍五入
         System.out.printf("%.4f\n", d);//666.1235
         System.out.println(ff.format(d));//666.1234
+    }
+    @Test
+    public void testMap(){
+        HashMap<String, String> map = new HashMap<>();
+        map.put("aa", "bb");
+        System.out.println(map.get("cc"));
     }
 }

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
+/** 汉得
  * 小李和同事玩贪吃蛇游戏。起始时，蛇位于m*n网格的左上角，现规定，贪吃蛇每次只能向右或者向下挪动一格且不能回退，
  * 猎物在该网格的右下角。请问，此种情况下，有多少种走法可以吃到该猎物?
  */
