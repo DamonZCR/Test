@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -155,5 +156,12 @@ public class study {
         HashMap<String, String> map = new HashMap<>();
         map.put("aa", "bb");
         System.out.println(map.get("cc"));
+    }
+    @Test
+    public void testPrintArray(){
+        String[] s = {"aa", "bb", "cc"};
+        System.out.println(s);//不能打印
+        System.out.println(s.toString());//不能打印
+        System.out.println(Arrays.toString(s));//可以打印
     }
 }
