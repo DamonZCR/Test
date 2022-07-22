@@ -102,8 +102,19 @@ public class ListTest {
         arrList.add(0, "3");
         arrList.add(0, "4");
 
-
         arrList.forEach(s-> System.out.print(s + " "));//4 3 2 9
+    }
+    @Test
+    public void test6(){
+        List<Integer> list = new ArrayList<>();
+        list.add(3);
+/*        list.add(2);
+        list.add(5);
+        list.add(0);*/
+        System.out.println(list);
+
+        list.sort((t1, t2) -> t2 > t1 ? 1 : -1);
+        System.out.println(list);
     }
 
 }
