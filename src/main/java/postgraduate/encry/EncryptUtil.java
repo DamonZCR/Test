@@ -82,7 +82,8 @@ public class EncryptUtil {
         System.out.println(url);
         System.out.println(urlEncoded);
         System.out.println(urlDecoded);
-        //测试解码一个 JWT 的负载部分；
+
+        //测试解码一个 JWT 的负载部分；测试发现可以成功的将一个JWT的负载部分解析出JSON格式；
         String s = "eyJhdWQiOlsicmVzMSJdLCJ1c2VyX25hbWUiOiJ7XCJmdWxsbmFtZVwiOlwi5byg5LiJXCIsXCJpZFwiOlwiMVwiLFwicGFzc3dvcmRcIjpcIiQyYSQxMCRTdFUxTGxnY285TG5MWjBodENTWHAuYzFGWlZlTXdHay9Dc3JncFlES0VBYzE5UkZoa2luU1wiLFwidXNlcm5hbWVcIjpcInpoYW5nc2FuXCJ9Iiwic2NvcGUiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiIsIlJPTEVfQVBJIl0sImV4cCI6MTY1ODc0MDU5NSwiYXV0aG9yaXRpZXMiOlsicDEiLCJwMyJdLCJqdGkiOiJiYWQyYmU0YS1mNzhhLTRjMTktYjc3My05ZjkwZTZlNDVlN2QiLCJjbGllbnRfaWQiOiJjMSJ9";
         System.out.println(EncryptUtil.decodeUTF8StringBase64(s));
     }
