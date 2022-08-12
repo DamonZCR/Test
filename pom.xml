@@ -6,24 +6,13 @@
 
   <groupId>org.damon</groupId>
   <artifactId>Test</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>8</source>
-          <target>8</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-    <modules>
-        <module>esLearn</module>
-    </modules>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
 
+    <modules><!--子 moudule-->
+        <module>esLearn</module>
+        <module>springaop</module>
+    </modules>
     <name>Test</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,7 +43,7 @@
       <version>2.5</version>
     </dependency>
     <dependency>
-      <!--json转换使用，对应testJSON中MyJson.java-->
+      <!--以下几个依赖主要是用来测试各JSON工具。json转换使用，对应testJSON中MyJson.java-->
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
       <version>1.2.62</version>
@@ -95,21 +84,24 @@
     </dependency>
 
     <!--导入使用redis的jedis包,在testRedis包中测试使用Redis包-->
-    <dependency> <groupId>redis.clients</groupId>
+    <dependency>
+      <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
       <version>3.2.0</version>
     </dependency>
-    <dependency>
+    <dependency><!--暂时未知它的作用-->
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy</artifactId>
       <version>2.4.16</version>
     </dependency>
-    <!--导入JWT所需的JAR包，如果是JDK1.8那么只需要这一个包，更高版本还需要导入更多的包-->
+
+    <!--导入JWT所需的JAR包，如果是JDK1.8那么只需要这一个包，更高版本还需要导入更多的包.对应：TestJWT.java-->
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt</artifactId>
       <version>0.9.1</version>
     </dependency>
+    <!--以下依赖为测试AOP使用，对应testAOP包下的：AspectDemo.java-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
@@ -128,5 +120,27 @@
       <version>1.9.4</version>
       <scope>compile</scope>
     </dependency>
+
+    <!--测试 Lombok 和 以及此时它包含的注解 @Slf4j 的使用-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.8</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
