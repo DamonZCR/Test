@@ -1,10 +1,9 @@
 package postgraduate.studyJava.testCollection;
 
 import org.junit.Test;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Arrays.asList() 生成的ArrayList() 与自己去定义出来的ArrayList不同，生成的只是Arrays的内部类。详细参见 test3 及test3_2。
@@ -116,5 +115,33 @@ public class ListTest {
         list.sort((t1, t2) -> t2 > t1 ? 1 : -1);
         System.out.println(list);
     }
+    //list中使用流可以去重；
+    @Test
+    public void test7(){
+        List<Integer> list = new ArrayList<>();
+        list.add(3);
+        list.add(2);
+        list.add(5);
+        list.add(0);
+        list.add(0);
+        System.out.println(list);
+        //List<Integer> collect = list.stream().distinct().collect(Collectors.toList());
+        list = list.stream().distinct().collect(Collectors.toList());
 
+        System.out.println(list);
+    }
+    @Test
+    public void test8(){
+        Scanner sc = new Scanner(System.in);
+        ArrayList<int[]> nums = new ArrayList<>();
+        while (sc.hasNext()){
+            int t1 = sc.nextInt();
+            int t2 = sc.nextInt();
+            nums.add(new int[]{t1, t2});
+        }
+        Collections.sort(nums, (int[] a, int[] b) -> (a[0] - b[0]));
+        for (int i = 0; i < nums.size(); i++) {
+            System.out.println(nums.get(i)[0] + " " + nums.get(i)[1]);
+        }
+    }
 }

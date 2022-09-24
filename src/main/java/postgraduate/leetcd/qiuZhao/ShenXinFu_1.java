@@ -2,7 +2,7 @@ package postgraduate.leetcd.qiuZhao;
 
 /**深信服-20220914
  * 最小转换步数-力扣原题72；
- * 给你两个单词 word1 和 word2， 请返回将 word1 转换成 word2 所使用的最少操作数  。
+ * 给你两个单词word1 和word2， 请返回将word1转换成word2 所使用的最少操作数。
  * 你可以对一个单词进行如下三种操作：
  * 插入一个字符
  * 删除一个字符
