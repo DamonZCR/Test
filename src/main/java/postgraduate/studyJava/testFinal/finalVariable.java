@@ -1,8 +1,8 @@
 package postgraduate.studyJava.testFinal;
 /*
-*ʹ��final�����βκ��β��ڷ����в��ɱ��ı䣬������ԭʵ�������Կɸı䡣
-* ��Ҫ�Ƕ��ڻ������ͣ�Javaʵ�ֵ���ֵ���ݣ�ֻ�ǰ�ֵ�������βΡ�
-* ��finalVariable2.java �������ݲ��ǻ������Ϳ��Ա����ĵ����ܱ��ض��塣
+ * 使用final定义形参后，形参在方法中不可被改变，但是在原实参体中仍可改变。
+ * 主要是对于基本类型，Java实现的是值传递，只是把值传给了形参。
+ * 看finalVariable2.java 看到传递不是基本类型可以被更改但不能被重定义。
  */
 public class finalVariable {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class finalVariable {
     }
 
     private static void changeValue(final int i) {
-        //i++;  final����Ĳ������ɱ��ı䡣
+        //i++;  //final定义的参数不可被改变。
         System.out.println(i);// 0
     }
 }

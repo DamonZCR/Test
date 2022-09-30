@@ -1,7 +1,7 @@
 package postgraduate.studyJava.testFinal;
 /*
- *final����ı�������ͨ����������
- *����ʹ�÷�������final������ֵ�����Ƿ�����ֵֻ���������ڼ����֪������ֵ�ġ�
+ * final定义的变量和普通变量的区别。
+ * 这里使用方法来给final变量赋值，但是方法赋值只能在运行期间才能知道返回值的。
 */
 
 public class VariableTest2 {
@@ -10,7 +10,10 @@ public class VariableTest2 {
         final String b = getHello();
 
         String c = b + 2;
+        String c1 = "hello" + 2;
         System.out.println(a == c);//false
+        System.out.println(c);
+        System.out.println(a == c1);//true
     }
     public static String getHello(){
         return  "hello";
