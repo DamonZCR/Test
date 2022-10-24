@@ -13,7 +13,7 @@ public class AMonthOfDay {
     static SimpleDateFormat monthFormat = new SimpleDateFormat("yyyy-MM");
 
     public static void main(String[] args) {
-        System.out.println(getDayNumByMonth("6", "2022"));
+        System.out.println(getDayNumByMonth("10", "2022"));
     }
     // 判断某一年中某一个月有多少天
     public static Integer getDayNumByMonth(String month, String year){

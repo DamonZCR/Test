@@ -6,11 +6,9 @@ package postgraduate.studyJava.faceObject;
  */
 public class TestStaticUse {
     public static void main(String[] args) {
-        System.out.println(Person.a);
-        Person.a = 11;
-        System.out.println(Person.a);
+
+        }
     }
-}
 
 class Person {
     static int a = 10;

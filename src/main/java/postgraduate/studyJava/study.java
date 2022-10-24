@@ -164,4 +164,34 @@ public class study {
         System.out.println(s.toString());//不能打印
         System.out.println(Arrays.toString(s));//可以打印
     }
+    @Test//测试break跳出循环；
+    public void testSwitch(){
+        int i = 2;
+        int result = 0;
+        switch (i){
+            case 1:
+                result = result + i;
+            case 2:
+                result = result + i * 2;
+                break;
+            case 3:
+                result = result + i * 3;
+        }
+        System.out.println(result);
+    }
+    @Test//字符
+    public void testChar(){
+        int n = (int)'五';
+        System.out.println(n);
+    }
+    @Test//测试字符串的空null
+    public void testNullString(){
+        String str = null;
+        if (str != null && str.length() > 8){
+            System.out.println("more than 8");
+        }else if (str == null  && str.length() < 4){//空指针异常
+            System.out.println("less than 4");
+        }else
+            System.out.println("end ");
+    }
 }
