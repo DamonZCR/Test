@@ -68,4 +68,25 @@ public class TestMap {
         }
         System.out.println(cnt);
     }
+    @Test
+    public void test5(){
+/*        int a = 4;
+        System.out.println(String.valueOf(a).hashCode());
+        int i;
+        System.out.println((i = String.valueOf(a).hashCode()) & 4);*/
+       char c = 'A';
+       int num = 5;
+       switch (c){
+           case 'B':
+               num++;
+           case 'A':
+               num++;
+           case 'Y':
+               num++;
+               break;
+           default:
+               num--;
+       }
+        System.out.println(num);
+    }
 }
