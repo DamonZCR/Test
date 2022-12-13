@@ -6,7 +6,7 @@ package postgraduate.leetcd.xunLian;
 public class ListNode {
     public int val;
     public ListNode next;
-    ListNode() {}
+    public ListNode() {}
     ListNode(int x) {
         val = x;
         next = null;

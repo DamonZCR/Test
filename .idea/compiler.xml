@@ -9,10 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springaop" />
         <module name="esLearn" />
+        <module name="springbootEmail" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AOPdemo" target="1.8" />
+      <module name="springBootEmail" target="8" />
+      <module name="springbootEmail" target="8" />
       <module name="testMyBatis" target="8" />
     </bytecodeTargetLevel>
   </component>

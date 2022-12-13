@@ -14,6 +14,8 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/springBootEmail/pom.xml" />
+        <option value="$PROJECT_DIR$/springbootEmail/pom.xml" />
         <option value="$PROJECT_DIR$/testMyBatis/pom.xml" />
       </set>
     </option>
